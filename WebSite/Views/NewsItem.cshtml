@@ -1,0 +1,45 @@
+﻿@using System.Web.Optimization
+@inherits UmbracoTemplatePage
+@{
+    Layout = "ContentBase.cshtml";
+
+    // If the editor has not explicitly provided the "Page title" property page
+    // then just show the name of the page otherwise show the provided title
+    var pageTitle = string.IsNullOrWhiteSpace(CurrentPage.Title)
+        ? CurrentPage.Name
+        : CurrentPage.Title;
+
+    // If the editor has not explicitly set the publishDate property then show the create date
+    var dateTime = CurrentPage.PublishDate == default(DateTime)
+        ? CurrentPage.CreateDate
+        : CurrentPage.PublishDate;
+}
+
+@section Scripts
+{
+    @Styles.Render("~/bundles/carousel-css")
+    @Scripts.Render("~/bundles/carousel-js")
+}
+
+@section Body
+{
+    <header>
+        <h1>@pageTitle</h1>
+    </header>
+    <ul class="meta">
+        <li class="timestamp">@dateTime.ToString("f")</li>
+    </ul>
+    <div class="text-content">
+
+        @CurrentPage.BodyText
+    </div>
+}
+
+@section Sidebar
+{
+    @{ Html.RenderPartial("NewsWithHeaderSidebar"); }
+}
+
+@*@section Footer{
+        @{ Html.RenderPartial("Features"); }
+    }*@

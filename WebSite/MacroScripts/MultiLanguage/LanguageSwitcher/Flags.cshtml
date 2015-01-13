@@ -1,0 +1,13 @@
+﻿@foreach (var data in LanguageHelper.GetUrlsAndLanguages(Model.Id))
+{
+    if (string.IsNullOrEmpty(data.Url))
+    {
+    <strong>
+        <img src="@Href("~/css/MultiLanguage/flags/"+data.CountryCode+".png")" alt="@data.NativeName" title="@data.NativeName"/></strong>
+    }
+    else
+    {
+    <a href="@data.Url">
+        <img src="@Href("~/css/MultiLanguage/flags/"+data.CountryCode+".png")" alt="@data.NativeName" title="@data.NativeName"/></a>
+    }
+}

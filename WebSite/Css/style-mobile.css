@@ -1,0 +1,322 @@
+/*********************************************************************************/
+/* Basic                                                                         */
+/*********************************************************************************/
+
+body {
+    font-size: 10pt;
+    letter-spacing: 0;
+    min-width: 320px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 0.5em 0;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+    h2.major {
+        text-align: left;
+        margin: 0.775em 0 0.75em 0;
+    }
+
+        h2.major span {
+            top: -0.775em;
+            padding: 0 1em 0 0;
+        }
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.3em;
+}
+
+section,
+article {
+    clear: both;
+    margin: 0 0 1.5em 0 !important;
+}
+
+.byline {
+    font-size: 1.2em;
+}
+
+.button {
+    font-size: 1.5em;
+    width: 100%;
+    padding: 0.75em 0 0.75em 0;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+.button-big {
+    font-size: 1.8em;
+    padding: 0.75em 0 0.75em 0;
+}
+
+ul.meta {
+    font-size: 1em;
+}
+
+/*********************************************************************************/
+/* Section + Article Types                                                       */
+/*********************************************************************************/
+
+.featured-page {
+}
+
+.text-content {
+}
+
+    .text-content img {
+        max-width: 100%;
+        height: auto !important;
+    }
+
+/*********************************************************************************/
+/* Sidebar + Content                                                             */
+/*********************************************************************************/
+
+.content {
+}
+
+    .content header {
+        margin: 0 0 2.5em 0;
+    }
+
+    .content .meta {
+        margin: 0 0 1em 0;
+    }
+
+/*********************************************************************************/
+/* News                                                                          */
+/*********************************************************************************/
+.news-item .byline {
+    margin: 0 0 0.5em 0;
+}
+
+.news-item ul.meta {
+    margin: 0 0 1em 0;
+}
+
+/*********************************************************************************/
+/* Wrappers                                                                      */
+/*********************************************************************************/
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+
+#header {
+    height: 200px;
+    background: none !important;
+}
+
+#header-logo {
+    margin: 0 auto;
+    top: 55px;
+    height: 140px;
+    width: 255px;
+}
+
+/*********************************************************************************/
+/* Language switcher                                                             */
+/*********************************************************************************/
+.language-switcher {
+}
+
+    .language-switcher li a {
+        background: #C1CAC5;
+        color: #fff;
+    }
+
+/*********************************************************************************/
+/* Nav                                                                           */
+/*********************************************************************************/
+
+#nav {
+    display: none;
+}
+
+/*********************************************************************************/
+/* Main                                                                          */
+/*********************************************************************************/
+
+#main-wrapper {
+    padding-bottom: 5.6em;
+}
+
+#main {
+    padding: 1.5em;
+}
+
+    #main > .row {
+        padding: 2em 0 2em 0;
+    }
+
+/*********************************************************************************/
+/* Footer                                                                        */
+/*********************************************************************************/
+
+#footer {
+}
+
+    #footer > .row {
+        padding: 1em 0;
+    }
+
+.footer-base {
+    font-size: 1em;
+}
+
+/*********************************************************************************/
+/* Copyright                                                                     */
+/*********************************************************************************/
+
+.copyright {
+    padding: 0 0.5em 0 0.5em;
+}
+
+/*********************************************************************************/
+/* Mobile UI                                                                     */
+/*********************************************************************************/
+
+#titleBar {
+    background: rgba(21, 38, 23, 0.8);
+}
+
+    #titleBar:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: url('images/overlay.png');
+        opacity: 0.15;
+    }
+
+    #titleBar .title {
+        display: block;
+        position: relative;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.25em;
+        line-height: 44px;
+        color: #fff;
+        z-index: 1000;
+        text-align: center;
+    }
+
+    #titleBar .toggle {
+        position: absolute;
+        left: 0;
+        top: 0;
+        text-indent: -9999px;
+        background: #98c34d url('images/mobileUI-site-nav-opener-bg.svg') 8px 14px no-repeat;
+        width: 44px;
+        height: 44px;
+        z-index: 1001;
+    }
+
+        #titleBar .toggle:active {
+            background-color: #b6dd73;
+        }
+
+#navPanel {
+    background: -moz-linear-gradient(top, #252c27, #000);
+    background: -webkit-linear-gradient(top, #252c27, #000);
+    background: -o-linear-gradient(top, #252c27, #000);
+    background: -ms-linear-gradient(top, #252c27, #000);
+    background: linear-gradient(top, #252c27, #000);
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    box-shadow: inset -3px 0px 10px 0px rgba(0,0,0,0.25);
+    /*z-index: 1010 !important;*/ /*Fix for skel panels */
+}
+
+    #navPanel nav {
+        position: relative;
+        z-index: 1000;
+    }
+
+    #navPanel:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: url('images/overlay.png');
+        opacity: 0.25;
+    }
+
+    #navPanel .link {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+        line-height: 2.8em;
+        padding: 0 1em 0 1em;
+        color: #fff;
+        opacity: 0.6;
+        border-top: solid 2px rgba(87, 93, 89, 0.15);
+    }
+
+        #navPanel .link:first-child {
+            border-top: 0;
+        }
+
+        #navPanel .link.depth-0 {
+            color: #fff;
+            opacity: 1;
+        }
+
+    #navPanel .indent-1 {
+        width: 1em;
+        display: inline-block;
+    }
+
+    #navPanel .indent-2 {
+        display: inline-block;
+        width: 2em;
+    }
+/*********************************************************************************/
+/* Workshop Application                                                          */
+/*********************************************************************************/
+
+.workshop-application-section input[type=text],
+.workshop-application-section input[type=email],
+.workshop-application-section input[type=tel],
+.workshop-application-section input[type=url] {
+    width: 245px;
+}
+
+.workshop-application-section textarea {
+    width: 245px;
+}
+
+.workshop-application-section select {
+    width: 245px;
+}
+
+.workshop-application-section h3 {
+    text-align: left;
+    margin: 2.5em 0 0.75em 0;
+}
+
+    .workshop-application-section h3 span {
+        top: -0.8em;
+        padding: 0 1em 0 0;
+    }
+
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

@@ -1,0 +1,115 @@
+﻿@using System.Web.Optimization
+@inherits UmbracoTemplatePage
+@{
+    Layout = "ContentBase.cshtml";
+
+    // If the editor has not explicitly provided the "Page title" property page
+    // then just show the name of the page otherwise show the provided title
+    var pageTitle = string.IsNullOrWhiteSpace(CurrentPage.Title)
+        ? CurrentPage.Name
+        : CurrentPage.Title;
+
+    var childGalleries = CurrentPage.Galleries;
+
+    var mediaStr = (string)CurrentPage.Images;
+    var mediaIds = mediaStr.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+    var media = Umbraco.TypedMedia(mediaIds).ToList();
+    //check for folders
+    var folders = media.Where(i => i.DocumentTypeAlias == "Folder").ToList();
+    folders.ForEach(i => media.Remove(i));
+    media.AddRange(folders.SelectMany(i => i.Children.Where(j => j.DocumentTypeAlias == "Image")));
+
+    const int subGalleriesPerRow = 6;
+    const int imagesPerRow = 6;
+}
+
+@helper RenderSubGalleryRow(dynamic childGalleries)
+{
+    <div class="row">
+        @foreach (var item in childGalleries)
+        {
+            // If the editor has not explicitly provided the "Page title" property page
+            // then just show the name of the page otherwise show the provided title
+            var title = string.IsNullOrWhiteSpace(item.Title)
+                ? item.Name
+                : item.Title;
+
+            <div class="3u">
+                <div class="gallery-sub-gallery-item">
+                    @if (string.IsNullOrWhiteSpace(item.Image) == false)
+                    {
+                        <a href="@item.Url" class="image">
+                            <img src="@Html.GetThumbnailUrl((string)item.Image)" alt="" />
+                        </a>
+                    }
+                    <h3><a href="@item.Url">@title</a></h3>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@helper RenderImagesRow(dynamic images)
+{
+    <div class="row half">
+        @foreach (var item in images)
+        {
+            <div class="2u">
+                <div class="gallery-image-item">
+                    @if (!string.IsNullOrWhiteSpace(item.Url))
+                    {
+                        <a href="@item.Url" class="image" title="@item.Name">
+                            <img src="@Html.GetThumbnailUrl((string)item.Url)" alt="" />
+                        </a>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@section Scripts
+{
+    @Styles.Render("~/bundles/magnific-popup-css")
+    @Scripts.Render("~/bundles/magnific-popup-js")
+}
+
+@section Body
+{
+    <article class="gallery">
+        <header>
+            <h1>@pageTitle</h1>
+        </header>
+
+        @{ Html.RenderPartial("/Views/Partials/Breadcrumb.cshtml"); }
+
+        <!--Render each itemsPerRow items in row-->
+        @for (int i = 0; i < (childGalleries.Count() + subGalleriesPerRow - 1) / subGalleriesPerRow; i++)
+        {
+            @RenderSubGalleryRow(childGalleries.Skip(i * subGalleriesPerRow).Take(subGalleriesPerRow))
+        }
+        @for (int i = 0; i < (media.Count() + imagesPerRow - 1) / imagesPerRow; i++)
+        {
+            @RenderImagesRow(media.Skip(i * imagesPerRow).Take(imagesPerRow))
+        }
+    </article>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.gallery-image-item').magnificPopup({
+                type: 'image',
+                delegate: 'a',
+                image: {
+                    titleSrc: null,
+                    cursor: null
+                },
+                gallery: {
+                    enabled: true,
+                    preload: [0, 1],
+                },
+                mainClass: 'mfp-fade',
+                removalDelay: 300
+            });
+        });
+    </script>
+}

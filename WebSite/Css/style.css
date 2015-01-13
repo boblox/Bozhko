@@ -1,0 +1,786 @@
+/*********************************************************************************/
+/* Basic                                                                         */
+/*********************************************************************************/
+
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../Fonts/OpenSans.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../Fonts/OpenSans-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Open Sans Condensed";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../Fonts/OpenSans-CondensedBold.woff") format("woff");
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/**********************************************
+/* Fixes for correct displaying of footer
+********************************************* */
+/*html, body {
+    height: 100%;
+}*/
+
+#skel-layers-wrapper {
+    min-height: 100%;
+}
+
+/**********************************************
+/* End of fixes for correct displaying of footer
+********************************************* */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    background: #fff;
+    color: #6b7770;
+    font-size: 11.5pt;
+    line-height: 1.8em;
+}
+
+    body.is-loading * {
+        -moz-transition: none !important;
+        -webkit-transition: none !important;
+        -o-transition: none !important;
+        -ms-transition: none !important;
+        transition: none !important;
+        -moz-animation: none !important;
+        -webkit-animation: none !important;
+        -o-animation: none !important;
+        -ms-animation: none !important;
+        animation: none !important;
+    }
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3em;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #6b7770;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+i, em {
+    font-style: italic;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h2.major {
+    position: relative;
+    border-top: solid 0.3em #e7eae8;
+}
+
+    h2.major span {
+        background: #fff;
+        position: relative;
+        display: inline-block;
+    }
+
+a {
+    color: #006376;
+    text-decoration: underline;
+}
+
+    a:hover {
+        text-decoration: none;
+    }
+
+form {
+}
+
+    form input,
+    form select,
+    form textarea {
+        /*-webkit-appearance: none;*/
+    }
+
+br.clear {
+    clear: both;
+}
+
+p, ol, dl, table {
+    margin-bottom: 1em;
+}
+
+section,
+article {
+    margin-bottom: 2em;
+}
+
+    section > :last-child,
+    article > :last-child {
+        margin-bottom: 0;
+    }
+
+    section:last-child,
+    article:last-child {
+        margin-bottom: 0;
+    }
+
+input, textarea, select {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    background: #f2f5f3;
+    color: #6b7770;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px #6b7770 solid;
+    padding: 2px 5px;
+}
+
+.byline {
+    display: block;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    /*text-transform: uppercase;*/
+    color: #c1cac5;
+}
+
+.image {
+    position: relative;
+    display: inline-block;
+    border-radius: 8px;
+}
+
+    .image img {
+        display: block;
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    /*
+		Note: The following style adds the textured/pixelated look to content
+		images. I added this to help mask the distortion introduced when a browser
+		resizes an image, but if you don't want this to happen just remove or comment
+		out the entire style.
+	*/
+
+    .image:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: url('images/overlay.png');
+        opacity: 0.05;
+        border-radius: 8px;
+    }
+
+.image-full {
+    display: block;
+    width: 100%;
+    margin: 0 0 1.4em 0;
+}
+
+.image-left {
+    float: left;
+    margin: 0 2em 2em 0;
+}
+
+.image-centered {
+    display: block;
+    margin: 0 0 2em 0;
+}
+
+    .image-centered img {
+        margin: 0 auto;
+        width: auto;
+    }
+
+.button {
+    display: inline-block;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #e3daa8;
+    color: #fff;
+    border-radius: 8px;
+    outline: 0;
+    -moz-transition: background-color .2s ease-in-out;
+    -webkit-transition: background-color .2s ease-in-out;
+    -o-transition: background-color .2s ease-in-out;
+    -ms-transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+}
+
+    .button:hover {
+        background: #ebe3b2;
+    }
+
+.button-alt {
+    background: #c1cac5;
+}
+
+    .button-alt:hover {
+        background: #ccd5d0;
+    }
+
+ul.separated-list {
+    margin-bottom: 3em;
+}
+
+    ul.separated-list > li {
+        border-top: solid 2px #e7eae8;
+        padding-top: 2.35em;
+        margin-top: 2.35em;
+    }
+
+        ul.separated-list > li:first-child {
+            border-top: 0;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+ul.meta {
+    color: #a1aaa5;
+}
+
+    ul.meta li {
+        position: relative;
+        display: inline-block;
+        padding-left: 24px;
+        margin-left: 1em;
+    }
+
+        ul.meta li a {
+            color: inherit;
+            outline: 0;
+        }
+
+        ul.meta li:first-child {
+            margin-left: 0;
+        }
+
+        ul.meta li:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 0;
+            top: 50%;
+            margin-top: -8px;
+            background: url('images/icons-meta.png');
+        }
+
+        ul.meta li.timestamp:before {
+            background-position: 0px 0px;
+        }
+
+        ul.meta li.comments:before {
+            background-position: -16px 0px;
+        }
+
+.noPadding {
+    padding: 0;
+}
+
+/*********************************************************************************/
+/* Validation                                                                    */
+/*********************************************************************************/
+
+.field-validation-error {
+    color: red;
+}
+
+/*********************************************************************************/
+/* Section + Article Types                                                       */
+/*********************************************************************************/
+
+.featured-page {
+    display: block;
+    text-decoration: none;
+    /*padding: 0.5em;*/
+    /*background-color: #b6dd73;*/
+    /*border: 0.3em #b6dd73 dashed;
+    border-radius: 14px;*/
+    transition: transform 0.3s ease-in-out;
+}
+
+    /*.featured-page:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+        border-radius: 14px;
+        border: 0.3em #b6dd73 dashed;
+    }*/
+
+    .featured-page h3 {
+        margin: 0em 0.5em 0 0.5em;
+    }
+
+    .featured-page .byline {
+        margin: 0.5em 0.5em 1em 0.5em;
+    }
+
+.text-content {
+}
+
+    .text-content ol {
+        padding-left: 2em;
+        margin-bottom: 1em;
+    }
+
+        .text-content ol li {
+            list-style: decimal inside;
+        }
+
+    .text-content ul {
+        padding-left: 2em;
+        margin-bottom: 1em;
+    }
+
+        .text-content ul li {
+            list-style: disc inside;
+        }
+
+    .text-content td {
+        vertical-align: middle;
+    }
+
+.gallery ul.breadcrumb {
+    background-color: #c1cac5;
+    padding: 0.2em 0.7em;
+    border-radius: 5px;
+    list-style: none;
+    display: inline-block;
+    margin-bottom: 2em;
+}
+
+    .gallery ul.breadcrumb li {
+        display: inline-block;
+    }
+
+/*********************************************************************************/
+/* Sidebar + Content                                                             */
+/*********************************************************************************/
+
+.sidebar {
+}
+
+.content {
+}
+
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+
+#header {
+    position: relative;
+    /*z-index: 1;*/
+    background-color: white;
+}
+
+#header-logo {
+    z-index: 1;
+    display: block;
+    position: relative;
+    background-size: contain !important;
+}
+
+/*
+	Note: The following style adds the textured/pixelated look to the banner
+	image. I added this to help mask the distortion introduced when a browser
+	resizes an image, but if you don't want this to happen just remove or comment
+	out the entire style.
+*/
+#header-wrapper {
+    background-color: white;
+    position: relative;
+}
+
+    #header-wrapper:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: url('images/overlay.png');
+        opacity: 0.175;
+    }
+
+/*********************************************************************************/
+/* Language switcher                                                             */
+/*********************************************************************************/
+.language-switcher {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1005;
+    font-family: 'Open Sans Condensed',sans-serif;
+    font-weight: 700;
+    line-height: 3.25em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+    .language-switcher li {
+        display: inline-block;
+    }
+
+        .language-switcher li a {
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            color: #da195d;
+            display: block;
+            outline: 0 none;
+            padding: 0.25em 1.5em;
+            text-decoration: none;
+        }
+
+        .language-switcher li:hover a {
+            background: #b6dd73;
+            color: #fff;
+        }
+
+        .language-switcher li.current_page_item a {
+            background: none repeat scroll 0 0 #98c34d;
+            color: #fff;
+        }
+
+/*********************************************************************************/
+/* Nav                                                                           */
+/*********************************************************************************/
+
+#nav {
+}
+
+/*********************************************************************************/
+/* Main                                                                          */
+/*********************************************************************************/
+
+#main-wrapper {
+}
+
+#main {
+}
+
+/*********************************************************************************/
+/* Footer                                                                        */
+/*********************************************************************************/
+
+.footer-wrapper {
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    background: #f2f5f3;
+}
+
+#footer {
+    text-align: center;
+}
+
+.footer-base {
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 8px;
+    color: #8b9790;
+}
+
+/*********************************************************************************/
+/* Contact                                                                        */
+/*********************************************************************************/
+
+ul.contact {
+    display: inline-block;
+    float: left;
+}
+
+    ul.contact li {
+        position: relative;
+        display: inline-block;
+        margin: 0 0.25em 0 0.25em;
+        top: 0;
+        -moz-transition: top .15s ease-in-out;
+        -webkit-transition: top .15s ease-in-out;
+        -o-transition: top .15s ease-in-out;
+        -ms-transition: top .15s ease-in-out;
+        transition: top .15s ease-in-out;
+    }
+
+        ul.contact li a {
+            display: block;
+            position: relative;
+            background: #c1cac5 url('images/icons-contact.png');
+            width: 48px;
+            height: 48px;
+            text-indent: -9999px;
+            border-radius: 6px;
+            outline: 0;
+            -moz-transition: background-color .2s ease-in-out;
+            -webkit-transition: background-color .2s ease-in-out;
+            -o-transition: background-color .2s ease-in-out;
+            -ms-transition: background-color .2s ease-in-out;
+            transition: background-color .2s ease-in-out;
+        }
+
+            ul.contact li a.facebook {
+                background-position: 0px 0px;
+            }
+
+        ul.contact li:hover a.facebook {
+            background-color: #3C5A98;
+        }
+
+        ul.contact li a.twitter {
+            background-position: -48px 0px;
+        }
+
+        ul.contact li:hover a.twitter {
+            background-color: #2DAAE4;
+        }
+
+        ul.contact li a.rss {
+            background-position: -96px 0px;
+        }
+
+        ul.contact li:hover a.rss {
+            background-color: #F2600B;
+        }
+
+        ul.contact li a.dribbble {
+            background-position: -144px 0px;
+        }
+
+        ul.contact li:hover a.dribbble {
+            background-color: #C4376B;
+        }
+
+        ul.contact li a.linkedin {
+            background-position: -192px 0px;
+        }
+
+        ul.contact li:hover a.linkedin {
+            background-color: #006599;
+        }
+
+        ul.contact li a.tumblr {
+            background-position: -240px 0px;
+        }
+
+        ul.contact li:hover a.tumblr {
+            background-color: #31516A;
+        }
+
+        ul.contact li a.googleplus {
+            background-position: -288px 0px;
+        }
+
+        ul.contact li:hover a.googleplus {
+            background-color: #DA2713;
+        }
+
+        ul.contact li:hover {
+            top: -5px;
+        }
+
+        ul.contact li:active {
+            top: 0;
+        }
+
+/*********************************************************************************/
+/* Copyright                                                                     */
+/*********************************************************************************/
+
+.copyright {
+    line-height: 48px;
+}
+
+/*********************************************************************************/
+/* Magnific Popup                                                                */
+/*********************************************************************************/
+
+/* overlay at start */
+.mfp-fade.mfp-bg {
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+    /* overlay animate in */
+    .mfp-fade.mfp-bg.mfp-ready {
+        opacity: 0.8;
+    }
+    /* overlay animate out */
+    .mfp-fade.mfp-bg.mfp-removing {
+        opacity: 0;
+    }
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+    opacity: 1;
+}
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+    opacity: 0;
+}
+
+/*Animation when switching images*/
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.mfp-figure {
+    -webkit-animation-name: fadeIn;
+    -moz-animation-name: fadeIn;
+    -o-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: .7s;
+    -moz-animation-duration: .7s;
+    -ms-animation-duration: .7s;
+    -o-animation-duration: .7s;
+    animation-duration: .7s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+}
+
+/*********************************************************************************/
+/* Workshop Application                                                          */
+/*********************************************************************************/
+.workshop-application-section {
+    /*margin-bottom: 50px;*/
+    margin: 3em 0;
+}
+
+    .workshop-application-section .row {
+        margin-left: -1em;
+    }
+
+    .workshop-application-section input[type=text],
+    .workshop-application-section input[type=email],
+    .workshop-application-section input[type=tel],
+    .workshop-application-section input[type=url] {
+        /*width: 25%;*/
+        width: 353px;
+    }
+
+    .workshop-application-section input[type=number] {
+        /*width: 25%;*/
+        width: 100px;
+    }
+
+    .workshop-application-section select {
+        /*width: 25%;*/
+        width: 353px;
+    }
+
+    .workshop-application-section textarea {
+        /*width: 25%;*/
+        width: 353px;
+        min-height: 125px;
+    }
+
+    .workshop-application-section h3 {
+        position: relative;
+        border-top: solid 0.3em #e7eae8;
+        text-align: left;
+        margin: 1em 1em 1em 0;
+    }
+
+        .workshop-application-section h3 span {
+            background: #fff;
+            position: relative;
+            display: inline-block;
+            padding-left: 0;
+            top: -0.9em;
+            padding: 0 1.5em 0 0;
+        }
+
+.workshop-application-errors {
+    color: red;
+    background-color: #c1cac5;
+    border-radius: 5px;
+    padding: 0.7em;
+}
+
+/*********************************************************************************/
+/* Human Info                                                                    */
+/*********************************************************************************/
+section.humans-overview-item {
+    margin-bottom: 3em;
+}
+
+/*********************************************************************************/
+/* Owl Carousel                                                                  */
+/*********************************************************************************/
+
+.owl-carousel .owl-item img {
+    max-width: 100%;
+    margin-left: auto; /*TODO: very quick fix for firefox and ie blinking*/
+    margin-right: auto; /*TODO: very quick fix for firefox and ie blinking*/
+}
+
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */

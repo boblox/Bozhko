@@ -1,0 +1,35 @@
+﻿@using System.Web.Optimization
+@inherits UmbracoTemplatePage
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Umbraco.Field("siteName", recursive: true) - @Umbraco.Field("title", altFieldAlias: "pageName")</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="@Umbraco.Field("description")" />
+    <meta name="keywords" content="" />
+    @*<noscript>
+        <link rel="stylesheet" href="/css/skel-noscript.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/style-desktop.css" />
+    </noscript>*@
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    @Styles.Render("~/bundles/basic-css")
+    @Scripts.Render("~/bundles/basic-js")
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts")
+    }
+</head>
+<body class="homepage">
+    <!-- /Header -->
+    @*@{ Html.RenderPartial("TopNavigation"); }*@
+    @{ Html.RenderPartial("Header"); }
+    @RenderBody()
+    @*@{ Html.RenderPartial("Footer"); }*@
+</body>
+</html>

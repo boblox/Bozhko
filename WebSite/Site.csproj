@@ -1,0 +1,770 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C32647F-41FA-43B6-9508-EC32A46B3926}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Site</RootNamespace>
+    <AssemblyName>Site</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <NuGetPackageImportStamp>ed9ad71e</NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="businesslogic, Version=1.0.5462.37510, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\businesslogic.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientDependency.Core, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ClientDependency.1.8.0.0\lib\net45\ClientDependency.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientDependency.Core.Mvc, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ClientDependency-Mvc.1.8.0.0\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="cms, Version=1.0.5462.37511, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\cms.dll</HintPath>
+    </Reference>
+    <Reference Include="controls, Version=1.0.5462.37515, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\controls.dll</HintPath>
+    </Reference>
+    <Reference Include="CookComputing.XmlRpcV2, Version=2.5.0.0, Culture=neutral, PublicKeyToken=a7d6e17aa302004d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\xmlrpcnet.2.5.0\lib\net20\CookComputing.XmlRpcV2.dll</HintPath>
+    </Reference>
+    <Reference Include="Diplo.TraceLogViewer, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DiploTraceLogViewer.2.1.1\lib\net45\Diplo.TraceLogViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Examine, Version=0.1.57.2941, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Examine.0.1.57.2941\lib\Examine.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="imagegen">
+      <HintPath>..\NonNugetAssemblies\ImageGen\imagegen.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageProcessor, Version=1.9.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ImageProcessor.1.9.5.0\lib\ImageProcessor.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageProcessor.Web, Version=3.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ImageProcessor.Web.3.3.1.0\lib\net45\ImageProcessor.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="interfaces, Version=1.0.5462.37501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=2.9.4.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Lucene.Net.2.9.4.1\lib\net40\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=1.0.1559.20655, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\Microsoft.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.1\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MiniProfiler.2.1.0\lib\net40\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySql.Data.6.6.5\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLCE4Umbraco, Version=1.0.5462.37514, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\SQLCE4Umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="TidyNet, Version=1.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\TidyNet.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco, Version=1.0.5462.37518, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Core, Version=1.0.5462.37503, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\Umbraco.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.DataLayer, Version=1.0.5462.37509, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\umbraco.DataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.editorControls, Version=1.0.5462.37523, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\umbraco.editorControls.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.MacroEngines, Version=1.0.5462.37525, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\umbraco.MacroEngines.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.providers, Version=1.0.5462.37516, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\umbraco.providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Web.UI, Version=1.0.5462.37527, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\Umbraco.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UmbracoExamine, Version=0.7.0.37513, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\UmbracoExamine.dll</HintPath>
+    </Reference>
+    <Reference Include="UrlRewritingNet.UrlRewriter, Version=2.0.60829.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.1\lib\UrlRewritingNet.UrlRewriter.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\BundleConfig.cs" />
+    <Compile Include="Helpers\Global.cs" />
+    <Compile Include="Helpers\NonOrderingBundleOrderer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="App_Plugins\DiploTraceLogViewer\backoffice\diplotracelog\detail.html" />
+    <Content Include="App_Plugins\DiploTraceLogViewer\backoffice\diplotracelog\edit.html" />
+    <Content Include="App_Plugins\DiploTraceLogViewer\backoffice\diplotracelog\EditController.js" />
+    <Content Include="App_Plugins\DiploTraceLogViewer\backoffice\diplotracelog\ng-table\ng-table.min.js" />
+    <Content Include="App_Plugins\DiploTraceLogViewer\backoffice\diplotracelog\tracelog.css" />
+    <Content Include="App_Plugins\DiploTraceLogViewer\readme.txt" />
+    <Content Include="Css\bootstrap-theme.min.css" />
+    <Content Include="Css\bootstrap.min.css" />
+    <Content Include="Css\styles.css">
+      <DependentUpon>styles.less</DependentUpon>
+    </Content>
+    <Content Include="Css\styles.min.css">
+      <DependentUpon>styles.css</DependentUpon>
+    </Content>
+    <Content Include="default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="usercontrols\ImageGenInstaller.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\ApplicationHelpers.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\grid.editors.config.js" />
+    <Content Include="Config\Splashes\booting.aspx" />
+    <Content Include="Config\Splashes\noNodes.aspx" />
+    <Content Include="Css\animate.css" />
+    <Content Include="Css\images\animated-overlay.gif" />
+    <Content Include="Css\images\icons-contact.png" />
+    <Content Include="Css\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Css\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Css\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Css\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Css\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Css\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Css\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Css\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Css\images\ui-icons_222222_256x240.png" />
+    <Content Include="Css\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Css\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Css\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Css\jquery-ui.min.css" />
+    <Content Include="Css\magnific-popup.css" />
+    <Content Include="Css\MultiLanguage\blank.gif" />
+    <Content Include="Css\MultiLanguage\flagsprites.png" />
+    <Content Include="Css\MultiLanguage\flags\ad.png" />
+    <Content Include="Css\MultiLanguage\flags\ad.woa.png" />
+    <Content Include="Css\MultiLanguage\flags\ae.png" />
+    <Content Include="Css\MultiLanguage\flags\af.png" />
+    <Content Include="Css\MultiLanguage\flags\ag.png" />
+    <Content Include="Css\MultiLanguage\flags\ai.png" />
+    <Content Include="Css\MultiLanguage\flags\al.png" />
+    <Content Include="Css\MultiLanguage\flags\am.png" />
+    <Content Include="Css\MultiLanguage\flags\an.png" />
+    <Content Include="Css\MultiLanguage\flags\ao.png" />
+    <Content Include="Css\MultiLanguage\flags\aq.png" />
+    <Content Include="Css\MultiLanguage\flags\ar.png" />
+    <Content Include="Css\MultiLanguage\flags\ar.woa.png" />
+    <Content Include="Css\MultiLanguage\flags\as.png" />
+    <Content Include="Css\MultiLanguage\flags\at.png" />
+    <Content Include="Css\MultiLanguage\flags\au.png" />
+    <Content Include="Css\MultiLanguage\flags\aw.png" />
+    <Content Include="Css\MultiLanguage\flags\ax.png" />
+    <Content Include="Css\MultiLanguage\flags\az.png" />
+    <Content Include="Css\MultiLanguage\flags\ba.png" />
+    <Content Include="Css\MultiLanguage\flags\bb.png" />
+    <Content Include="Css\MultiLanguage\flags\bd.png" />
+    <Content Include="Css\MultiLanguage\flags\be.png" />
+    <Content Include="Css\MultiLanguage\flags\bf.png" />
+    <Content Include="Css\MultiLanguage\flags\bg.png" />
+    <Content Include="Css\MultiLanguage\flags\bh.png" />
+    <Content Include="Css\MultiLanguage\flags\bi.png" />
+    <Content Include="Css\MultiLanguage\flags\bj.png" />
+    <Content Include="Css\MultiLanguage\flags\bl.loc.png" />
+    <Content Include="Css\MultiLanguage\flags\bl.png" />
+    <Content Include="Css\MultiLanguage\flags\bm.png" />
+    <Content Include="Css\MultiLanguage\flags\bn.png" />
+    <Content Include="Css\MultiLanguage\flags\bo.png" />
+    <Content Include="Css\MultiLanguage\flags\br.png" />
+    <Content Include="Css\MultiLanguage\flags\bs.png" />
+    <Content Include="Css\MultiLanguage\flags\bt.png" />
+    <Content Include="Css\MultiLanguage\flags\bv.png" />
+    <Content Include="Css\MultiLanguage\flags\bw.png" />
+    <Content Include="Css\MultiLanguage\flags\by.png" />
+    <Content Include="Css\MultiLanguage\flags\bz.png" />
+    <Content Include="Css\MultiLanguage\flags\ca.png" />
+    <Content Include="Css\MultiLanguage\flags\cc.png" />
+    <Content Include="Css\MultiLanguage\flags\cd.png" />
+    <Content Include="Css\MultiLanguage\flags\cf.png" />
+    <Content Include="Css\MultiLanguage\flags\cg.png" />
+    <Content Include="Css\MultiLanguage\flags\ch.png" />
+    <Content Include="Css\MultiLanguage\flags\ci.png" />
+    <Content Include="Css\MultiLanguage\flags\ck.png" />
+    <Content Include="Css\MultiLanguage\flags\cl.png" />
+    <Content Include="Css\MultiLanguage\flags\cm.png" />
+    <Content Include="Css\MultiLanguage\flags\cn.png" />
+    <Content Include="Css\MultiLanguage\flags\co.png" />
+    <Content Include="Css\MultiLanguage\flags\cr.png" />
+    <Content Include="Css\MultiLanguage\flags\cr.woa.png" />
+    <Content Include="Css\MultiLanguage\flags\cs.png" />
+    <Content Include="Css\MultiLanguage\flags\cu.png" />
+    <Content Include="Css\MultiLanguage\flags\cv.png" />
+    <Content Include="Css\MultiLanguage\flags\cx.png" />
+    <Content Include="Css\MultiLanguage\flags\cy.png" />
+    <Content Include="Css\MultiLanguage\flags\cz.png" />
+    <Content Include="Css\MultiLanguage\flags\de.png" />
+    <Content Include="Css\MultiLanguage\flags\dj.png" />
+    <Content Include="Css\MultiLanguage\flags\dk.png" />
+    <Content Include="Css\MultiLanguage\flags\dm.png" />
+    <Content Include="Css\MultiLanguage\flags\do.png" />
+    <Content Include="Css\MultiLanguage\flags\dz.png" />
+    <Content Include="Css\MultiLanguage\flags\ec.png" />
+    <Content Include="Css\MultiLanguage\flags\ee.png" />
+    <Content Include="Css\MultiLanguage\flags\eg.png" />
+    <Content Include="Css\MultiLanguage\flags\eh.png" />
+    <Content Include="Css\MultiLanguage\flags\er.png" />
+    <Content Include="Css\MultiLanguage\flags\es.png" />
+    <Content Include="Css\MultiLanguage\flags\et.png" />
+    <Content Include="Css\MultiLanguage\flags\fi.png" />
+    <Content Include="Css\MultiLanguage\flags\fj.png" />
+    <Content Include="Css\MultiLanguage\flags\fk.png" />
+    <Content Include="Css\MultiLanguage\flags\fm.png" />
+    <Content Include="Css\MultiLanguage\flags\fo.png" />
+    <Content Include="Css\MultiLanguage\flags\fr.png" />
+    <Content Include="Css\MultiLanguage\flags\fx.png" />
+    <Content Include="Css\MultiLanguage\flags\ga.png" />
+    <Content Include="Css\MultiLanguage\flags\gb.png" />
+    <Content Include="Css\MultiLanguage\flags\gd.png" />
+    <Content Include="Css\MultiLanguage\flags\ge.png" />
+    <Content Include="Css\MultiLanguage\flags\gf.png" />
+    <Content Include="Css\MultiLanguage\flags\gg.png" />
+    <Content Include="Css\MultiLanguage\flags\gh.png" />
+    <Content Include="Css\MultiLanguage\flags\gi.png" />
+    <Content Include="Css\MultiLanguage\flags\gl.png" />
+    <Content Include="Css\MultiLanguage\flags\gm.png" />
+    <Content Include="Css\MultiLanguage\flags\gn.png" />
+    <Content Include="Css\MultiLanguage\flags\gp.loc1.png" />
+    <Content Include="Css\MultiLanguage\flags\gp.loc2.png" />
+    <Content Include="Css\MultiLanguage\flags\gp.png" />
+    <Content Include="Css\MultiLanguage\flags\gq.png" />
+    <Content Include="Css\MultiLanguage\flags\gr.png" />
+    <Content Include="Css\MultiLanguage\flags\gs.png" />
+    <Content Include="Css\MultiLanguage\flags\gt.png" />
+    <Content Include="Css\MultiLanguage\flags\gu.png" />
+    <Content Include="Css\MultiLanguage\flags\gw.png" />
+    <Content Include="Css\MultiLanguage\flags\gy.png" />
+    <Content Include="Css\MultiLanguage\flags\hk.png" />
+    <Content Include="Css\MultiLanguage\flags\hm.png" />
+    <Content Include="Css\MultiLanguage\flags\hn.png" />
+    <Content Include="Css\MultiLanguage\flags\hr.png" />
+    <Content Include="Css\MultiLanguage\flags\ht.png" />
+    <Content Include="Css\MultiLanguage\flags\ht.woa.png" />
+    <Content Include="Css\MultiLanguage\flags\hu.png" />
+    <Content Include="Css\MultiLanguage\flags\id.png" />
+    <Content Include="Css\MultiLanguage\flags\ie.png" />
+    <Content Include="Css\MultiLanguage\flags\il.png" />
+    <Content Include="Css\MultiLanguage\flags\in.png" />
+    <Content Include="Css\MultiLanguage\flags\io.png" />
+    <Content Include="Css\MultiLanguage\flags\iq.png" />
+    <Content Include="Css\MultiLanguage\flags\ir.png" />
+    <Content Include="Css\MultiLanguage\flags\is.png" />
+    <Content Include="Css\MultiLanguage\flags\it.png" />
+    <Content Include="Css\MultiLanguage\flags\je.png" />
+    <Content Include="Css\MultiLanguage\flags\jm.png" />
+    <Content Include="Css\MultiLanguage\flags\jo.png" />
+    <Content Include="Css\MultiLanguage\flags\jp.png" />
+    <Content Include="Css\MultiLanguage\flags\ke.png" />
+    <Content Include="Css\MultiLanguage\flags\kg.png" />
+    <Content Include="Css\MultiLanguage\flags\kh.png" />
+    <Content Include="Css\MultiLanguage\flags\ki.png" />
+    <Content Include="Css\MultiLanguage\flags\km.png" />
+    <Content Include="Css\MultiLanguage\flags\kn.png" />
+    <Content Include="Css\MultiLanguage\flags\kp.png" />
+    <Content Include="Css\MultiLanguage\flags\kr.png" />
+    <Content Include="Css\MultiLanguage\flags\kw.png" />
+    <Content Include="Css\MultiLanguage\flags\ky.png" />
+    <Content Include="Css\MultiLanguage\flags\kz.png" />
+    <Content Include="Css\MultiLanguage\flags\la.png" />
+    <Content Include="Css\MultiLanguage\flags\lb.png" />
+    <Content Include="Css\MultiLanguage\flags\lc.png" />
+    <Content Include="Css\MultiLanguage\flags\li.png" />
+    <Content Include="Css\MultiLanguage\flags\li.woa.png" />
+    <Content Include="Css\MultiLanguage\flags\lk.png" />
+    <Content Include="Css\MultiLanguage\flags\lr.png" />
+    <Content Include="Css\MultiLanguage\flags\ls.png" />
+    <Content Include="Css\MultiLanguage\flags\lt.png" />
+    <Content Include="Css\MultiLanguage\flags\lu.png" />
+    <Content Include="Css\MultiLanguage\flags\lv.png" />
+    <Content Include="Css\MultiLanguage\flags\ly.png" />
+    <Content Include="Css\MultiLanguage\flags\ma.png" />
+    <Content Include="Css\MultiLanguage\flags\mc.png" />
+    <Content Include="Css\MultiLanguage\flags\md.png" />
+    <Content Include="Css\MultiLanguage\flags\me.png" />
+    <Content Include="Css\MultiLanguage\flags\mf.loc1.png" />
+    <Content Include="Css\MultiLanguage\flags\mf.loc2.png" />
+    <Content Include="Css\MultiLanguage\flags\mf.png" />
+    <Content Include="Css\MultiLanguage\flags\mg.png" />
+    <Content Include="Css\MultiLanguage\flags\mh.png" />
+    <Content Include="Css\MultiLanguage\flags\mk.png" />
+    <Content Include="Css\MultiLanguage\flags\ml.png" />
+    <Content Include="Css\MultiLanguage\flags\mm.png" />
+    <Content Include="Css\MultiLanguage\flags\mn.png" />
+    <Content Include="Css\MultiLanguage\flags\mo.png" />
+    <Content Include="Css\MultiLanguage\flags\mp.png" />
+    <Content Include="Css\MultiLanguage\flags\mq.png" />
+    <Content Include="Css\MultiLanguage\flags\mq.snake1.png" />
+    <Content Include="Css\MultiLanguage\flags\mq.snake2.png" />
+    <Content Include="Css\MultiLanguage\flags\mr.png" />
+    <Content Include="Css\MultiLanguage\flags\ms.png" />
+    <Content Include="Css\MultiLanguage\flags\mt.png" />
+    <Content Include="Css\MultiLanguage\flags\mu.png" />
+    <Content Include="Css\MultiLanguage\flags\mv.png" />
+    <Content Include="Css\MultiLanguage\flags\mw.png" />
+    <Content Include="Css\MultiLanguage\flags\mx.png" />
+    <Content Include="Css\MultiLanguage\flags\my.png" />
+    <Content Include="Css\MultiLanguage\flags\mz.png" />
+    <Content Include="Css\MultiLanguage\flags\na.png" />
+    <Content Include="Css\MultiLanguage\flags\nc.png" />
+    <Content Include="Css\MultiLanguage\flags\ne.png" />
+    <Content Include="Css\MultiLanguage\flags\nf.png" />
+    <Content Include="Css\MultiLanguage\flags\ng.png" />
+    <Content Include="Css\MultiLanguage\flags\ni.png" />
+    <Content Include="Css\MultiLanguage\flags\ni.woa.png" />
+    <Content Include="Css\MultiLanguage\flags\nl.png" />
+    <Content Include="Css\MultiLanguage\flags\no.png" />
+    <Content Include="Css\MultiLanguage\flags\np.png" />
+    <Content Include="Css\MultiLanguage\flags\nr.png" />
+    <Content Include="Css\MultiLanguage\flags\nu.png" />
+    <Content Include="Css\MultiLanguage\flags\nz.png" />
+    <Content Include="Css\MultiLanguage\flags\om.png" />
+    <Content Include="Css\MultiLanguage\flags\pa.png" />
+    <Content Include="Css\MultiLanguage\flags\pe.png" />
+    <Content Include="Css\MultiLanguage\flags\pe.woa.png" />
+    <Content Include="Css\MultiLanguage\flags\pf.png" />
+    <Content Include="Css\MultiLanguage\flags\pg.png" />
+    <Content Include="Css\MultiLanguage\flags\ph.png" />
+    <Content Include="Css\MultiLanguage\flags\pk.png" />
+    <Content Include="Css\MultiLanguage\flags\pl.png" />
+    <Content Include="Css\MultiLanguage\flags\pm.loc.png" />
+    <Content Include="Css\MultiLanguage\flags\pm.png" />
+    <Content Include="Css\MultiLanguage\flags\pn.png" />
+    <Content Include="Css\MultiLanguage\flags\pr.png" />
+    <Content Include="Css\MultiLanguage\flags\ps.png" />
+    <Content Include="Css\MultiLanguage\flags\pt.png" />
+    <Content Include="Css\MultiLanguage\flags\pw.png" />
+    <Content Include="Css\MultiLanguage\flags\py.png" />
+    <Content Include="Css\MultiLanguage\flags\qa.png" />
+    <Content Include="Css\MultiLanguage\flags\re.png" />
+    <Content Include="Css\MultiLanguage\flags\ro.png" />
+    <Content Include="Css\MultiLanguage\flags\rs.png" />
+    <Content Include="Css\MultiLanguage\flags\rs.woa.png" />
+    <Content Include="Css\MultiLanguage\flags\ru.png" />
+    <Content Include="Css\MultiLanguage\flags\rw.png" />
+    <Content Include="Css\MultiLanguage\flags\sa.png" />
+    <Content Include="Css\MultiLanguage\flags\sb.png" />
+    <Content Include="Css\MultiLanguage\flags\sc.png" />
+    <Content Include="Css\MultiLanguage\flags\sd.png" />
+    <Content Include="Css\MultiLanguage\flags\se.png" />
+    <Content Include="Css\MultiLanguage\flags\sg.png" />
+    <Content Include="Css\MultiLanguage\flags\sh.png" />
+    <Content Include="Css\MultiLanguage\flags\si.png" />
+    <Content Include="Css\MultiLanguage\flags\sj.png" />
+    <Content Include="Css\MultiLanguage\flags\sk.png" />
+    <Content Include="Css\MultiLanguage\flags\sl.png" />
+    <Content Include="Css\MultiLanguage\flags\sm.png" />
+    <Content Include="Css\MultiLanguage\flags\sn.png" />
+    <Content Include="Css\MultiLanguage\flags\so.png" />
+    <Content Include="Css\MultiLanguage\flags\sr.png" />
+    <Content Include="Css\MultiLanguage\flags\st.png" />
+    <Content Include="Css\MultiLanguage\flags\sv.png" />
+    <Content Include="Css\MultiLanguage\flags\sv.woa.png" />
+    <Content Include="Css\MultiLanguage\flags\sy.png" />
+    <Content Include="Css\MultiLanguage\flags\sz.png" />
+    <Content Include="Css\MultiLanguage\flags\tc.png" />
+    <Content Include="Css\MultiLanguage\flags\td.png" />
+    <Content Include="Css\MultiLanguage\flags\tf.png" />
+    <Content Include="Css\MultiLanguage\flags\tg.png" />
+    <Content Include="Css\MultiLanguage\flags\th.png" />
+    <Content Include="Css\MultiLanguage\flags\tj.png" />
+    <Content Include="Css\MultiLanguage\flags\tk.png" />
+    <Content Include="Css\MultiLanguage\flags\tl.png" />
+    <Content Include="Css\MultiLanguage\flags\tm.png" />
+    <Content Include="Css\MultiLanguage\flags\tn.png" />
+    <Content Include="Css\MultiLanguage\flags\to.png" />
+    <Content Include="Css\MultiLanguage\flags\tp.png" />
+    <Content Include="Css\MultiLanguage\flags\tr.png" />
+    <Content Include="Css\MultiLanguage\flags\tt.png" />
+    <Content Include="Css\MultiLanguage\flags\tv.png" />
+    <Content Include="Css\MultiLanguage\flags\tw.png" />
+    <Content Include="Css\MultiLanguage\flags\tz.png" />
+    <Content Include="Css\MultiLanguage\flags\ua.png" />
+    <Content Include="Css\MultiLanguage\flags\ug.png" />
+    <Content Include="Css\MultiLanguage\flags\um.png" />
+    <Content Include="Css\MultiLanguage\flags\us.png" />
+    <Content Include="Css\MultiLanguage\flags\uy.png" />
+    <Content Include="Css\MultiLanguage\flags\uz.png" />
+    <Content Include="Css\MultiLanguage\flags\va.png" />
+    <Content Include="Css\MultiLanguage\flags\vc.png" />
+    <Content Include="Css\MultiLanguage\flags\ve.png" />
+    <Content Include="Css\MultiLanguage\flags\vg.png" />
+    <Content Include="Css\MultiLanguage\flags\vi.png" />
+    <Content Include="Css\MultiLanguage\flags\vn.png" />
+    <Content Include="Css\MultiLanguage\flags\vu.png" />
+    <Content Include="Css\MultiLanguage\flags\wf.png" />
+    <Content Include="Css\MultiLanguage\flags\ws.png" />
+    <Content Include="Css\MultiLanguage\flags\xt.png" />
+    <Content Include="Css\MultiLanguage\flags\ye.png" />
+    <Content Include="Css\MultiLanguage\flags\yt.loc.png" />
+    <Content Include="Css\MultiLanguage\flags\yt.png" />
+    <Content Include="Css\MultiLanguage\flags\yu.png" />
+    <Content Include="Css\MultiLanguage\flags\za.png" />
+    <Content Include="Css\MultiLanguage\flags\zm.png" />
+    <Content Include="Css\MultiLanguage\flags\zw.png" />
+    <Content Include="Css\MultiLanguage\style.css" />
+    <Content Include="Css\OwlCarousel\owl.carousel.css" />
+    <Content Include="Css\OwlCarousel\owl.theme.green.css" />
+    <Content Include="Css\style-1000px.css" />
+    <Content Include="Css\style-desktop.css" />
+    <Content Include="Css\style-mobile.css" />
+    <Content Include="Css\style.css" />
+    <Content Include="js\config.js" />
+    <Content Include="js\jquery-ui.min.js" />
+    <Content Include="js\jquery.dropotron.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery.validate.min.js" />
+    <Content Include="js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="js\magnific.popup.min.js" />
+    <Content Include="js\owl.carousel.min.js" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\404handlers.config" />
+    <Content Include="Config\applications.config" />
+    <Content Include="Config\BaseRestExtensions.config" />
+    <Content Include="Config\ClientDependency.config" />
+    <Content Include="Config\Dashboard.config" />
+    <Content Include="Config\EmbeddedMedia.config" />
+    <Content Include="Config\ExamineIndex.config" />
+    <Content Include="Config\ExamineSettings.config" />
+    <Content Include="Config\feedProxy.config" />
+    <Content Include="Config\FileSystemProviders.config" />
+    <Content Include="Config\ImageGen.config" />
+    <Content Include="Config\log4net.config" />
+    <Content Include="Config\metablogConfig.config" />
+    <Content Include="Config\scripting.config" />
+    <Content Include="Config\smtp.config" />
+    <Content Include="Config\tinyMceConfig.config" />
+    <Content Include="Config\trees.config" />
+    <Content Include="Config\umbracoSettings.config" />
+    <Content Include="Config\UrlRewriting.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MacroScripts\MultiLanguage\LanguageSwitcher\DefaultForMacro.cshtml" />
+    <Content Include="MacroScripts\MultiLanguage\LanguageSwitcher\DropDown.cshtml" />
+    <Content Include="MacroScripts\MultiLanguage\LanguageSwitcher\Flags.cshtml" />
+    <Content Include="MacroScripts\MultiLanguage\LanguageSwitcher\FlagSprites.cshtml" />
+    <Content Include="MacroScripts\MultiLanguage\LanguageSwitcher\List.cshtml" />
+    <Content Include="MacroScripts\MultiLanguage\Metadata.cshtml" />
+    <Content Include="MacroScripts\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ContentBase.cshtml" />
+    <Content Include="Views\Gallery.cshtml" />
+    <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\LayoutBase.cshtml" />
+    <Content Include="Views\MacroPartials\ImagesCarousel.cshtml" />
+    <Content Include="Views\NewsItem.cshtml" />
+    <Content Include="Views\NewsOverview.cshtml" />
+    <Content Include="Views\Partials\Breadcrumb.cshtml" />
+    <Content Include="Views\Partials\Features.cshtml" />
+    <Content Include="Views\Partials\Footer.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
+    <Content Include="Views\Partials\Header.cshtml" />
+    <Content Include="Views\Partials\ImagesCarousel.cshtml" />
+    <Content Include="Views\Partials\NewsHorizontal.cshtml" />
+    <Content Include="Views\Partials\NewsSidebar.cshtml" />
+    <Content Include="Views\Partials\NewsWithHeaderSidebar.cshtml" />
+    <Content Include="Views\Partials\Sitemap.cshtml" />
+    <Content Include="Views\Partials\Social.cshtml" />
+    <Content Include="Views\Partials\TopNavigation.cshtml" />
+    <Content Include="Views\Partials\TopNavigationList.cshtml" />
+    <Content Include="Views\Sitemap.cshtml" />
+    <Content Include="Views\TextPage.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Xslt\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ImageGen.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{4aeb8053-f550-48ef-b143-ed7b8067ab39}</Project>
+      <Name>Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\DiploTraceLogViewer\package.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\DiploTraceLogViewer\backoffice\diplotracelog\ng-table\ng-table.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\OpenSans.woff" />
+    <Content Include="Fonts\OpenSans-CondensedBold.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\OpenSans-Bold.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\styles.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\styles.css.map">
+      <DependentUpon>styles.css</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\ProximaNova-Light.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fonts\HattoriHanzo.otf" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>16232</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7097/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

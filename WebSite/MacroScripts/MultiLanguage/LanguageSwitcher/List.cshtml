@@ -1,0 +1,13 @@
+﻿<ul style="text-transform: capitalize; list-style-type: none;">
+    @foreach (var data in LanguageHelper.GetUrlsAndLanguages(Model.Id))
+    {
+        if (string.IsNullOrEmpty(data.Url))
+        {
+            <li class="current_page_item"><a href="#" style="cursor: default">@data.LanguageCode</a></li>
+        }
+        else
+        {
+            <li><a href="@data.Url">@data.LanguageCode</a></li>
+        }
+    }
+</ul>

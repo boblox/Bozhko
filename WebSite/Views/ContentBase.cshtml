@@ -1,0 +1,46 @@
+﻿@inherits UmbracoTemplatePage
+@{
+    Layout = "LayoutBase.cshtml";
+    //var isSidebarDefined = IsSectionDefined("Sidebar");
+    //var contentWidth = isSidebarDefined ? "9u" : "12u";
+}
+@section Scripts{
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts")
+    }
+}
+<div class="main">
+    <div class="container">
+        @RenderSection("Body")
+    </div>
+</div>
+
+@*<div id="main-wrapper">
+        <div id="main" class="container">
+            <div class="row">
+                <!-- Content -->
+                <div class="@contentWidth content">
+                    @RenderSection("Body")
+                </div>
+                <!-- /Content -->
+                <!-- Sidebar -->
+                @if (isSidebarDefined)
+                {
+                    <div class="3u sidebar">
+                        @RenderSection("Sidebar")
+                    </div>
+                }
+                <!-- /Sidebar -->
+            </div>
+            @if (IsSectionDefined("Footer"))
+            {
+                <div class="row">
+                    <div class="9u">
+                        @RenderSection("Footer")
+                    </div>
+                </div>
+            }
+        </div>
+    </div>*@
+<!-- /Main -->
