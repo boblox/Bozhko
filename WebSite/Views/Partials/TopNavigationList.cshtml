@@ -25,9 +25,7 @@
     }
     else
     {
-        <li class="@(CurrentPage.Id == item.Id ? "active" : null)">
-            <a href="@item.Url">@itemTitle</a>
-        </li>
+        @CommonHelpers.SimpleMenuItem(item, CurrentPage)
     }
 }
 

@@ -1,0 +1,187 @@
+﻿@import "Bootstrap/mixins.less"; //just for proper compilation
+@import "Bootstrap/variables.less";
+@import "variables.less";
+
+/*Basic styles*********************************************************************/
+.header-font {
+    font-family: @font-family-header;
+    letter-spacing: 1px;
+}
+
+.no-gutters.row {
+    margin-right: 0;
+    margin-left: 0;
+
+    & > [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    .header-font;
+}
+
+@logo-sm-total-height: @logo-sm-height+2*@logo-sm-margin;
+@logo-lg-total-height: @logo-lg-height+@logo-lg-margin-bottom+@logo-lg-margin-top;
+
+/*Main elements*********************************************************************/
+.header-wrapper {
+    margin: 0;
+
+    .row > * {
+        .transition(height 1s);
+
+        @media(min-width:@screen-sm-min) {
+            height: @logo-sm-total-height;
+        }
+
+        @media(min-width:@screen-md-min) {
+            height: @logo-lg-total-height;
+        }
+    }
+
+    &.scrolled {
+        .row > * {
+            @media(min-width:@screen-sm-min) {
+                height: @logo-sm-total-height;
+            }
+        }
+
+        .header-logo {
+            margin: @logo-sm-margin auto @logo-sm-margin auto;
+
+            img {
+                height: @logo-sm-height;
+            }
+        }
+    }
+}
+
+.main-wrapper {
+    @margin-xs: @logo-sm-total-height + 15px;
+    @margin-sm: @logo-sm-total-height + 20px;
+    @margin-lg: @logo-lg-total-height + 20px;
+
+    margin-top: @margin-xs;
+
+    @media(min-width:@screen-sm-min) and (max-width:@screen-sm-max) {
+        margin-top: @margin-sm;
+    }
+
+    @media(min-width:@screen-md-min) {
+        margin-top: @margin-lg;
+    }
+}
+
+/*Navigation*********************************************************************/
+#navigation.navbar-collapse {
+    /*float: left;*/
+    .header-font;
+    font-size: 0.857em;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    @media(max-width:@screen-xs-max) {
+        border-color: @navbar-default-color;
+        border-bottom: 1px solid;
+        background-color: white;
+    }
+
+    @media(min-width:@screen-sm-min) {
+        position: relative;
+        top: 50%;
+        .translate(0, -50%);
+    }
+
+    .navbar-nav > li {
+        margin: 4px;
+
+        /*@media(min-width:@screen-lg-min) {
+            margin: 5px;
+        }*/
+
+        a {
+            padding: 5px;
+        }
+    }
+    //Multi-level menu
+    /*@media(min-width:@screen-sm) {
+        li.dropdown:hover > ul.dropdown-menu {
+            display: block;
+        }
+    }*/
+}
+
+/*Header*********************************************************************/
+.header-logo {
+    display: inline-block;
+    vertical-align: top;
+    margin: @logo-sm-margin auto @logo-sm-margin auto;
+
+    @media(min-width:@screen-md-min) {
+        margin: @logo-lg-margin-top auto @logo-lg-margin-bottom auto;
+    }
+
+    img {
+        height: @logo-sm-height;
+        display: block;
+        .transition(all 1s);
+
+        @media(min-width:@screen-md-min) {
+            height: @logo-lg-height;
+        }
+    }
+}
+
+/*Social********************************************************************/
+ul.contact {
+    display: inline-block;
+    float: right;
+    padding: 0;
+    margin: 0;
+
+    @media(min-width:@screen-sm-min) {
+        position: relative;
+        top: 50%;
+        .translate(0,-50%);
+    }
+
+    li {
+        display: inline-block;
+        margin: 10px;
+        float: left;
+
+        a {
+            display: block;
+            background: #c1cac5 url('images/icons-contact.png');
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+
+            &.facebook {
+                background-position: 0px 0px;
+            }
+
+            &.twitter {
+                background-position: -48px 0px;
+            }
+
+            &.googleplus {
+                background-position: -288px 0px;
+            }
+        }
+
+        &:hover a.facebook {
+            background-color: #3C5A98;
+        }
+
+        &:hover a.twitter {
+            background-color: #2DAAE4;
+        }
+
+        &:hover a.googleplus {
+            background-color: #DA2713;
+        }
+    }
+}

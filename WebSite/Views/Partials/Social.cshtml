@@ -8,25 +8,20 @@
 }
 
 <!-- Contact -->
-@*<h2 class="major"><span>@Umbraco.GetDictionaryValue("WeInSocialNetworks")</span></h2>*@
 <ul class="contact">
-    @RenderLinkIfNotEmpty(homePage.FacebookLink, "facebook", "Facebook", @Umbraco.GetDictionaryValue("WeInSocialNetworks"))
-    @*@RenderLinkIfNotEmpty(homePage.TwitterLink, "twitter", "Twitter")
-        @RenderLinkIfNotEmpty(homePage.RssLink, "rss", "RSS")
-        @RenderLinkIfNotEmpty(homePage.DribbbleLink, "dribbble", "Dribbble")
-        @RenderLinkIfNotEmpty(homePage.LinkedinLink, "linkedin", "Linked In")
-        @RenderLinkIfNotEmpty(homePage.GoogleLink, "googleplus", "Google+")*@
+    @RenderLinkIfNotEmpty(homePage.FacebookLink, "facebook", "Facebook")
+    @RenderLinkIfNotEmpty(homePage.TwitterLink, "twitter", "Twitter")
+    @RenderLinkIfNotEmpty(homePage.GoogleLink, "googleplus", "Google+")
+    @*@RenderLinkIfNotEmpty(homePage.RssLink, "rss", "RSS")
+    @RenderLinkIfNotEmpty(homePage.DribbbleLink, "dribbble", "Dribbble")
+    @RenderLinkIfNotEmpty(homePage.LinkedinLink, "linkedin", "Linked In")*@
 </ul>
 <!-- /Contact -->
-
-@helper RenderLinkIfNotEmpty(dynamic link, string cssClass, string linkName, string title)
+@helper RenderLinkIfNotEmpty(dynamic link, string cssClass, string linkName, string title = "")
 {
-    // A helper function is handy when you have to do the same thing over and over again
-    // So now we only have to write the "if" check and list item once, and we only need
-    // to put in the things that can vary
-    
+
     if (string.IsNullOrEmpty(link) == false)
     {
-        <li><a href="@link" class="@cssClass" title="@title">@linkName</a></li>
+        <li><a href="@link" class="@cssClass" title="@title"></a></li>
     }
 }

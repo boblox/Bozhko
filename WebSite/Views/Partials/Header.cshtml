@@ -4,16 +4,29 @@
 }
 
 <!-- Header with logo -->
-<nav class="header-wrapper navbar navbar-inverse navbar-fixed-top">
+<nav class="header-wrapper navbar navbar-default navbar-fixed-top">
     <div class="container">
-        @{Html.RenderPartial("TopNavigation");}
+        <div class="row no-gutters">
+            <div class="col-sm-11 col-md-7 col-lg-7">
+                @{Html.RenderPartial("TopNavigation");}
+            </div>
+            <div class="col-sm-6 col-md-12 col-lg-10 text-center hidden-xs">
+                @{Html.RenderPartial("Logo");}
+            </div>
+            <div class="col-sm-7 col-md-5 col-lg-7 hidden-xs">
+                @{Html.RenderPartial("Social");}
+            </div>
+        </div>
     </div>
 </nav>
 
-@*<div id="header-wrapper">
-        <div id="header" class="container" style="background: url('@(Umbraco.Field("headerImage", recursive:true))') center bottom no-repeat;">
-            <a id="header-logo"
-               href="@homePage.Url" style="background: url('@(Umbraco.Field("headerLogo", recursive:true))') no-repeat;"></a>
-        </div>
-    </div>*@
-<!-- /Header with logo  -->
+<script type="text/javascript">
+    var scrollFromTop = 100;
+    $(window).bind('scroll', function () {
+        if ($(window).scrollTop() > scrollFromTop) {
+            $('.header-wrapper').addClass('scrolled');
+        } else {
+            $('.header-wrapper').removeClass('scrolled');
+        }
+    });
+</script>

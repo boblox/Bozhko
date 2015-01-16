@@ -1,23 +1,30 @@
 ﻿@inherits UmbracoTemplatePage
 @{
-    Layout = "ContentBase.cshtml";
+    Layout = "LayoutBase.cshtml";
 }
 
-@section Body
+
+<div class="main-wrapper">
+    <div class="container-fluid">
+        <h1>Bob lox</h1>
+    </div>
+</div>
+
+@*@section Body
 {
-    @*<div class="home-page">
-        <div class="row">
-            <div class="12u">
-                @{ Html.RenderPartial("/Views/Partials/Features.cshtml"); }
+    <div class="home-page">
+            <div class="row">
+                <div class="12u">
+                    @{ Html.RenderPartial("/Views/Partials/Features.cshtml"); }
+                </div>
+            </div>
+            <div class="row">
+                <div class="12u">
+                    @{ Html.RenderPartial("/Views/Partials/NewsHorizontal.cshtml"); }
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="12u">
-                @{ Html.RenderPartial("/Views/Partials/NewsHorizontal.cshtml"); }
-            </div>
-        </div>
-    </div>*@
-}
+}*@
 
 @*@section Sidebar
     {

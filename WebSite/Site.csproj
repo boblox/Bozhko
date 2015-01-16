@@ -284,13 +284,24 @@
     <Content Include="App_Plugins\DiploTraceLogViewer\backoffice\diplotracelog\ng-table\ng-table.min.js" />
     <Content Include="App_Plugins\DiploTraceLogViewer\backoffice\diplotracelog\tracelog.css" />
     <Content Include="App_Plugins\DiploTraceLogViewer\readme.txt" />
-    <Content Include="Css\bootstrap-theme.min.css" />
-    <Content Include="Css\bootstrap.min.css" />
+    <Content Include="Css\images\logo.png" />
+    <Content Include="Css\main.css">
+      <DependentUpon>main.less</DependentUpon>
+    </Content>
+    <Content Include="Css\main.min.css">
+      <DependentUpon>main.css</DependentUpon>
+    </Content>
     <Content Include="Css\styles.css">
       <DependentUpon>styles.less</DependentUpon>
     </Content>
     <Content Include="Css\styles.min.css">
       <DependentUpon>styles.css</DependentUpon>
+    </Content>
+    <Content Include="Css\variables.css">
+      <DependentUpon>variables.less</DependentUpon>
+    </Content>
+    <Content Include="Css\variables.min.css">
+      <DependentUpon>variables.css</DependentUpon>
     </Content>
     <Content Include="default.aspx" />
     <Content Include="favicon.ico" />
@@ -300,7 +311,7 @@
     <Content Include="usercontrols\ImageGenInstaller.ascx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\ApplicationHelpers.cshtml" />
+    <Content Include="App_Code\CommonHelpers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config\grid.editors.config.js" />
@@ -598,10 +609,6 @@
     <Content Include="Css\MultiLanguage\style.css" />
     <Content Include="Css\OwlCarousel\owl.carousel.css" />
     <Content Include="Css\OwlCarousel\owl.theme.green.css" />
-    <Content Include="Css\style-1000px.css" />
-    <Content Include="Css\style-desktop.css" />
-    <Content Include="Css\style-mobile.css" />
-    <Content Include="Css\style.css" />
     <Content Include="js\config.js" />
     <Content Include="js\jquery-ui.min.js" />
     <Content Include="js\jquery.dropotron.min.js" />
@@ -703,13 +710,6 @@
     <Content Include="App_Plugins\DiploTraceLogViewer\backoffice\diplotracelog\ng-table\ng-table.map" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Fonts\OpenSans.woff" />
-    <Content Include="Fonts\OpenSans-CondensedBold.woff" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Fonts\OpenSans-Bold.woff" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Fonts\glyphicons-halflings-regular.woff" />
@@ -727,6 +727,99 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fonts\HattoriHanzo.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\Bootstrap\.csscomb.json" />
+    <Content Include="Css\Bootstrap\.csslintrc" />
+    <Content Include="Css\Bootstrap\alerts.less" />
+    <Content Include="Css\Bootstrap\badges.less" />
+    <Content Include="Css\Bootstrap\bootstrap.less" />
+    <Content Include="Css\Bootstrap\breadcrumbs.less" />
+    <Content Include="Css\Bootstrap\button-groups.less" />
+    <Content Include="Css\Bootstrap\buttons.less" />
+    <Content Include="Css\Bootstrap\carousel.less" />
+    <Content Include="Css\Bootstrap\close.less" />
+    <Content Include="Css\Bootstrap\code.less" />
+    <Content Include="Css\Bootstrap\component-animations.less" />
+    <Content Include="Css\Bootstrap\dropdowns.less" />
+    <Content Include="Css\Bootstrap\forms.less" />
+    <Content Include="Css\Bootstrap\glyphicons.less" />
+    <Content Include="Css\Bootstrap\grid.less" />
+    <Content Include="Css\Bootstrap\input-groups.less" />
+    <Content Include="Css\Bootstrap\jumbotron.less" />
+    <Content Include="Css\Bootstrap\labels.less" />
+    <Content Include="Css\Bootstrap\list-group.less" />
+    <Content Include="Css\Bootstrap\media.less" />
+    <Content Include="Css\Bootstrap\mixins.less" />
+    <Content Include="Css\Bootstrap\mixins\alerts.less" />
+    <Content Include="Css\Bootstrap\mixins\background-variant.less" />
+    <Content Include="Css\Bootstrap\mixins\border-radius.less" />
+    <Content Include="Css\Bootstrap\mixins\buttons.less" />
+    <Content Include="Css\Bootstrap\mixins\center-block.less" />
+    <Content Include="Css\Bootstrap\mixins\clearfix.less" />
+    <Content Include="Css\Bootstrap\mixins\forms.less" />
+    <Content Include="Css\Bootstrap\mixins\gradients.less" />
+    <Content Include="Css\Bootstrap\mixins\grid-framework.less" />
+    <Content Include="Css\Bootstrap\mixins\grid.less" />
+    <Content Include="Css\Bootstrap\mixins\hide-text.less" />
+    <Content Include="Css\Bootstrap\mixins\image.less" />
+    <Content Include="Css\Bootstrap\mixins\labels.less" />
+    <Content Include="Css\Bootstrap\mixins\list-group.less" />
+    <Content Include="Css\Bootstrap\mixins\nav-divider.less" />
+    <Content Include="Css\Bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="Css\Bootstrap\mixins\opacity.less" />
+    <Content Include="Css\Bootstrap\mixins\pagination.less" />
+    <Content Include="Css\Bootstrap\mixins\panels.less" />
+    <Content Include="Css\Bootstrap\mixins\progress-bar.less" />
+    <Content Include="Css\Bootstrap\mixins\reset-filter.less" />
+    <Content Include="Css\Bootstrap\mixins\resize.less" />
+    <Content Include="Css\Bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="Css\Bootstrap\mixins\size.less" />
+    <Content Include="Css\Bootstrap\mixins\tab-focus.less" />
+    <Content Include="Css\Bootstrap\mixins\table-row.less" />
+    <Content Include="Css\Bootstrap\mixins\text-emphasis.less" />
+    <Content Include="Css\Bootstrap\mixins\text-overflow.less" />
+    <Content Include="Css\Bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="Css\Bootstrap\modals.less" />
+    <Content Include="Css\Bootstrap\navbar.less" />
+    <Content Include="Css\Bootstrap\navs.less" />
+    <Content Include="Css\Bootstrap\normalize.less" />
+    <Content Include="Css\Bootstrap\pager.less" />
+    <Content Include="Css\Bootstrap\pagination.less" />
+    <Content Include="Css\Bootstrap\panels.less" />
+    <Content Include="Css\Bootstrap\popovers.less" />
+    <Content Include="Css\Bootstrap\print.less" />
+    <Content Include="Css\Bootstrap\progress-bars.less" />
+    <Content Include="Css\Bootstrap\responsive-embed.less" />
+    <Content Include="Css\Bootstrap\responsive-utilities.less" />
+    <Content Include="Css\Bootstrap\scaffolding.less" />
+    <Content Include="Css\Bootstrap\tables.less" />
+    <Content Include="Css\Bootstrap\theme.less" />
+    <Content Include="Css\Bootstrap\thumbnails.less" />
+    <Content Include="Css\Bootstrap\tooltip.less" />
+    <Content Include="Css\Bootstrap\type.less" />
+    <Content Include="Css\Bootstrap\utilities.less" />
+    <Content Include="Css\Bootstrap\variables.less" />
+    <Content Include="Css\Bootstrap\wells.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\variables.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\variables.css.map">
+      <DependentUpon>variables.css</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\main.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\main.css.map">
+      <DependentUpon>main.css</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\Logo.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

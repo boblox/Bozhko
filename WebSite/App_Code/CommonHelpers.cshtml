@@ -1,0 +1,7 @@
+﻿@helper SimpleMenuItem(dynamic menuPage, dynamic currentPage)
+{
+    var itemTitle = string.IsNullOrWhiteSpace(menuPage.Title) ? menuPage.Name : menuPage.Title;
+    <li class="@(currentPage.Id == menuPage.Id ? "active" : null)">
+        <a href="@menuPage.Url">@itemTitle</a>
+    </li>
+}

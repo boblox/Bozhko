@@ -6,49 +6,46 @@ namespace Site.Helpers
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
+            var orderer = new NonOrderingBundleOrderer();
+
             //Basic Js&Css============================================================
-            var styleBundle = new StyleBundle("~/bundles/basic-css")
+            var styleBundle = new StyleBundle("~/css/basic-css")
                 .Include("~/css/jquery-ui.min.css")
-                .Include("~/css/bootstrap.min.css")
-                .Include("~/css/bootstrap-theme.min.css")
                 .Include("~/css/styles.min.css");
-            styleBundle.Orderer = new NonOrderingBundleOrderer();
+            styleBundle.Orderer = orderer;
             bundles.Add(styleBundle);
 
-            var scriptBundle = new ScriptBundle("~/bundles/basic-js")
+            var scriptBundle = new ScriptBundle("~/js/basic-js")
                 .Include("~/js/jquery.min.js")
                 .Include("~/js/jquery-ui.min.js")
                 .Include("~/js/jquery.validate.min.js")
                 .Include("~/js/jquery.validate.unobtrusive.min.js")
                 .Include("~/js/bootstrap.min.js")
-                //.Include("~/js/jquery.dropotron.min.js")
-                //.Include("~/js/skel.min.js")
-                //.Include("~/js/skel-layers.min.js")
                 .Include("~/js/config.js");
-            scriptBundle.Orderer = new NonOrderingBundleOrderer();
+            scriptBundle.Orderer = orderer;
             bundles.Add(scriptBundle);
 
             //Magnific Pop-Up=========================================================
-            styleBundle = new StyleBundle("~/bundles/magnific-popup-css")
+            styleBundle = new StyleBundle("~/css/magnific-popup-css")
                 .Include("~/css/magnific-popup.css");
-            styleBundle.Orderer = new NonOrderingBundleOrderer();
+            styleBundle.Orderer = orderer;
             bundles.Add(styleBundle);
 
-            scriptBundle = new ScriptBundle("~/bundles/magnific-popup-js")
+            scriptBundle = new ScriptBundle("~/js/magnific-popup-js")
                 .Include("~/js/magnific.popup.min.js");
-            scriptBundle.Orderer = new NonOrderingBundleOrderer();
+            scriptBundle.Orderer = orderer;
             bundles.Add(scriptBundle);
 
             //Owl Carousel ===========================================================
-            styleBundle = new StyleBundle("~/bundles/carousel-css")
+            styleBundle = new StyleBundle("~/css/OwlCarousel/carousel-css")
                 .Include("~/css/OwlCarousel/owl.carousel.css")
                 .Include("~/css/OwlCarousel/owl.theme.green.css");
-            styleBundle.Orderer = new NonOrderingBundleOrderer();
+            styleBundle.Orderer = orderer;
             bundles.Add(styleBundle);
 
-            scriptBundle = new ScriptBundle("~/bundles/carousel-js")
+            scriptBundle = new ScriptBundle("~/js/carousel-js")
                 .Include("~/js/owl.carousel.min.js");
-            scriptBundle.Orderer = new NonOrderingBundleOrderer();
+            scriptBundle.Orderer = orderer;
             bundles.Add(scriptBundle);
 
             //BundleTable.EnableOptimizations = false;
