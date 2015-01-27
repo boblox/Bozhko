@@ -25,7 +25,7 @@
 
 <div class="collapse navbar-collapse" id="navigation">
     <ul class="nav navbar-nav navbar-left">
-        @CommonHelpers.SimpleMenuItem(homePage, CurrentPage)
+        @*@CommonHelpers.SimpleMenuItem(homePage, CurrentPage)*@
         @{
             var dict = new ViewDataDictionary(ViewData) { { "menuItem", homePage } };
             Html.RenderPartial("TopNavigationList", dict);

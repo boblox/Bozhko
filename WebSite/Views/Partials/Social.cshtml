@@ -9,10 +9,10 @@
 
 <!-- Contact -->
 <ul class="contact">
+    @RenderLinkIfNotEmpty(homePage.InstagramLink, "instagram", "Instagram")
     @RenderLinkIfNotEmpty(homePage.FacebookLink, "facebook", "Facebook")
-    @RenderLinkIfNotEmpty(homePage.TwitterLink, "twitter", "Twitter")
-    @RenderLinkIfNotEmpty(homePage.GoogleLink, "googleplus", "Google+")
-    @*@RenderLinkIfNotEmpty(homePage.RssLink, "rss", "RSS")
+    @RenderLinkIfNotEmpty(homePage.SkypeLink, "skype", "Skype")
+    @*@RenderLinkIfNotEmpty(homePage.GoogleLink, "googleplus", "Google+")
     @RenderLinkIfNotEmpty(homePage.DribbbleLink, "dribbble", "Dribbble")
     @RenderLinkIfNotEmpty(homePage.LinkedinLink, "linkedin", "Linked In")*@
 </ul>

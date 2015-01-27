@@ -1,29 +1,14 @@
-﻿@import "Bootstrap/mixins.less"; //just for proper compilation
-@import "Bootstrap/variables.less";
-@import "variables.less";
+﻿@import (reference) "Bootstrap/mixins.less";
+@import (reference) "Bootstrap/variables.less";
+@import (reference) "variables.less";
+@import (reference) "mixins.less";
+@import (reference) "globals.less";
 
 /*Basic styles*********************************************************************/
-.header-font {
-    font-family: @font-family-header;
-    letter-spacing: 1px;
-}
-
-.no-gutters.row {
-    margin-right: 0;
-    margin-left: 0;
-
-    & > [class*="col-"] {
-        padding-right: 0;
-        padding-left: 0;
-    }
-}
 
 h1, h2, h3, h4, h5, h6 {
     .header-font;
 }
-
-@logo-sm-total-height: @logo-sm-height+2*@logo-sm-margin;
-@logo-lg-total-height: @logo-lg-height+@logo-lg-margin-bottom+@logo-lg-margin-top;
 
 /*Main elements*********************************************************************/
 .header-wrapper {
@@ -89,18 +74,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     @media(min-width:@screen-sm-min) {
-        position: relative;
-        top: 50%;
-        .translate(0, -50%);
+        .vertical-align-middle();
     }
 
     .navbar-nav > li {
         margin: 4px;
-
         /*@media(min-width:@screen-lg-min) {
             margin: 5px;
         }*/
-
         a {
             padding: 5px;
         }
@@ -120,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: @logo-sm-margin auto @logo-sm-margin auto;
 
     @media(min-width:@screen-md-min) {
-        margin: @logo-lg-margin-top auto @logo-lg-margin-bottom auto;
+        margin: @logo-lg-margin auto @logo-lg-margin auto;
     }
 
     img {
@@ -141,47 +122,31 @@ ul.contact {
     padding: 0;
     margin: 0;
 
+    @media(max-width:@screen-sm-max) {
+        .navbar-vertical-align(@logo-sm-height);
+    }
+
     @media(min-width:@screen-sm-min) {
-        position: relative;
-        top: 50%;
-        .translate(0,-50%);
+        .vertical-align-middle();
     }
 
     li {
         display: inline-block;
-        margin: 10px;
+        margin: 13px;
         float: left;
 
         a {
-            display: block;
-            background: #c1cac5 url('images/icons-contact.png');
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
+            &.instagram {
+                .social-icon(0);
+            }
 
             &.facebook {
-                background-position: 0px 0px;
+                .social-icon(-50px);
             }
 
-            &.twitter {
-                background-position: -48px 0px;
+            &.skype {
+                .social-icon(-100px);
             }
-
-            &.googleplus {
-                background-position: -288px 0px;
-            }
-        }
-
-        &:hover a.facebook {
-            background-color: #3C5A98;
-        }
-
-        &:hover a.twitter {
-            background-color: #2DAAE4;
-        }
-
-        &:hover a.googleplus {
-            background-color: #DA2713;
         }
     }
 }

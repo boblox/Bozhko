@@ -1,0 +1,42 @@
+﻿/*Mixins****************************************************/
+@import (reference) "Bootstrap/variables.less";
+@import (reference) "Bootstrap/mixins.less";
+@import (reference) "variables.less";
+
+.social-icon(@x) {
+    @height: 24px;
+    @width: 24px;
+    display: block;
+    background: white url('images/icons-contact.png');
+    width: @width;
+    height: @height;
+    border-radius: 50%;
+    background-position: @x 0;
+
+    &:hover {
+        background-position: @x @height;
+    }
+}
+
+.header-font() {
+    font-family: @font-family-header;
+    letter-spacing: 1px;
+}
+
+.vertical-align-middle {
+    position: relative;
+    top: 50%;
+    .translate(0, -50%);
+}
+
+.no-gutters {
+    &.row {
+        margin-right: 0;
+        margin-left: 0;
+
+        > [class*="col-"] {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+}

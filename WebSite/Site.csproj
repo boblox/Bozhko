@@ -284,12 +284,24 @@
     <Content Include="App_Plugins\DiploTraceLogViewer\backoffice\diplotracelog\ng-table\ng-table.min.js" />
     <Content Include="App_Plugins\DiploTraceLogViewer\backoffice\diplotracelog\tracelog.css" />
     <Content Include="App_Plugins\DiploTraceLogViewer\readme.txt" />
+    <Content Include="Css\globals.css">
+      <DependentUpon>globals.less</DependentUpon>
+    </Content>
+    <Content Include="Css\globals.min.css">
+      <DependentUpon>globals.css</DependentUpon>
+    </Content>
     <Content Include="Css\images\logo.png" />
     <Content Include="Css\main.css">
       <DependentUpon>main.less</DependentUpon>
     </Content>
     <Content Include="Css\main.min.css">
       <DependentUpon>main.css</DependentUpon>
+    </Content>
+    <Content Include="Css\mixins.css">
+      <DependentUpon>mixins.less</DependentUpon>
+    </Content>
+    <Content Include="Css\mixins.min.css">
+      <DependentUpon>mixins.css</DependentUpon>
     </Content>
     <Content Include="Css\styles.css">
       <DependentUpon>styles.less</DependentUpon>
@@ -654,7 +666,6 @@
   <ItemGroup>
     <Content Include="Views\ContentBase.cshtml" />
     <Content Include="Views\Gallery.cshtml" />
-    <Content Include="Views\Home.cshtml" />
     <Content Include="Views\LayoutBase.cshtml" />
     <Content Include="Views\MacroPartials\ImagesCarousel.cshtml" />
     <Content Include="Views\NewsItem.cshtml" />
@@ -675,7 +686,6 @@
     <Content Include="Views\Partials\NewsHorizontal.cshtml" />
     <Content Include="Views\Partials\NewsSidebar.cshtml" />
     <Content Include="Views\Partials\NewsWithHeaderSidebar.cshtml" />
-    <Content Include="Views\Partials\Sitemap.cshtml" />
     <Content Include="Views\Partials\Social.cshtml" />
     <Content Include="Views\Partials\TopNavigation.cshtml" />
     <Content Include="Views\Partials\TopNavigationList.cshtml" />
@@ -820,6 +830,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Partials\Logo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\mixins.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\mixins.css.map">
+      <DependentUpon>mixins.css</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\globals.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\globals.css.map">
+      <DependentUpon>globals.css</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LayoutCustom.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

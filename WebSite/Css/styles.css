@@ -4388,7 +4388,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar {
   position: relative;
-  min-height: 50px;
+  min-height: 60px;
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
@@ -4495,10 +4495,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-brand {
   float: left;
-  padding: 15px 15px;
+  padding: 20px 15px;
   font-size: 18px;
   line-height: 20px;
-  height: 50px;
+  height: 60px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -4518,8 +4518,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: right;
   margin-right: 15px;
   padding: 9px 10px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 13px;
+  margin-bottom: 13px;
   background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
@@ -4543,7 +4543,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-nav {
-  margin: 7.5px -15px;
+  margin: 10px -15px;
 }
 .navbar-nav > li > a {
   padding-top: 10px;
@@ -4581,8 +4581,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 .navbar-form {
@@ -4593,8 +4593,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom: 1px solid transparent;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 13px;
+  margin-bottom: 13px;
 }
 @media (min-width: 768px) {
   .navbar-form .form-group {
@@ -4678,20 +4678,20 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom-left-radius: 0;
 }
 .navbar-btn {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 13px;
+  margin-bottom: 13px;
 }
 .navbar-btn.btn-sm {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.navbar-btn.btn-xs {
-  margin-top: 14px;
-  margin-bottom: 14px;
-}
-.navbar-text {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+.navbar-btn.btn-xs {
+  margin-top: 19px;
+  margin-bottom: 19px;
+}
+.navbar-text {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 @media (min-width: 768px) {
   .navbar-text {
@@ -6875,18 +6875,6 @@ button.close {
   src: url("../Fonts/HattoriHanzo.otf") format("opentype");
 }
 /*Basic styles*********************************************************************/
-.header-font {
-  font-family: "Hattori Hanzo", Arial;
-  letter-spacing: 1px;
-}
-.no-gutters.row {
-  margin-right: 0;
-  margin-left: 0;
-}
-.no-gutters.row > [class*="col-"] {
-  padding-right: 0;
-  padding-left: 0;
-}
 h1,
 h2,
 h3,
@@ -6912,7 +6900,7 @@ h6 {
 }
 @media (min-width: 992px) {
   .header-wrapper .row > * {
-    height: 173px;
+    height: 163px;
   }
 }
 @media (min-width: 768px) {
@@ -6936,7 +6924,7 @@ h6 {
 }
 @media (min-width: 992px) {
   .main-wrapper {
-    margin-top: 193px;
+    margin-top: 183px;
   }
 }
 /*Navigation*********************************************************************/
@@ -6987,7 +6975,7 @@ h6 {
 }
 @media (min-width: 992px) {
   .header-logo {
-    margin: 10px auto 20px auto;
+    margin: 10px auto 10px auto;
   }
 }
 .header-logo img {
@@ -7009,6 +6997,12 @@ ul.contact {
   padding: 0;
   margin: 0;
 }
+@media (max-width: 991px) {
+  ul.contact {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
 @media (min-width: 768px) {
   ul.contact {
     position: relative;
@@ -7021,32 +7015,57 @@ ul.contact {
 }
 ul.contact li {
   display: inline-block;
-  margin: 10px;
+  margin: 13px;
   float: left;
 }
-ul.contact li a {
+ul.contact li a.instagram {
   display: block;
-  background: #c1cac5 url('images/icons-contact.png');
-  width: 32px;
-  height: 32px;
+  background: white url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
+  background-position: 0 0;
+}
+ul.contact li a.instagram:hover {
+  background-position: 0 24px;
 }
 ul.contact li a.facebook {
-  background-position: 0px 0px;
+  display: block;
+  background: white url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: -50px 0;
 }
-ul.contact li a.twitter {
-  background-position: -48px 0px;
+ul.contact li a.facebook:hover {
+  background-position: -50px 24px;
 }
-ul.contact li a.googleplus {
-  background-position: -288px 0px;
+ul.contact li a.skype {
+  display: block;
+  background: white url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: -100px 0;
 }
-ul.contact li:hover a.facebook {
-  background-color: #3C5A98;
+ul.contact li a.skype:hover {
+  background-position: -100px 24px;
 }
-ul.contact li:hover a.twitter {
-  background-color: #2DAAE4;
+/*Mixins****************************************************/
+.vertical-align-middle {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
 }
-ul.contact li:hover a.googleplus {
-  background-color: #DA2713;
+.no-gutters.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+.no-gutters.row > [class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -1,29 +1,4 @@
-﻿/*Variables*************************************************************/
-@font-face {
-  font-family: "Proxima Nova Light";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../Fonts/ProximaNova-Light.otf") format("opentype");
-}
-@font-face {
-  font-family: "Hattori Hanzo";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../Fonts/HattoriHanzo.otf") format("opentype");
-}
-/*Basic styles*********************************************************************/
-.header-font {
-  font-family: "Hattori Hanzo", Arial;
-  letter-spacing: 1px;
-}
-.no-gutters.row {
-  margin-right: 0;
-  margin-left: 0;
-}
-.no-gutters.row > [class*="col-"] {
-  padding-right: 0;
-  padding-left: 0;
-}
+﻿/*Basic styles*********************************************************************/
 h1,
 h2,
 h3,
@@ -49,7 +24,7 @@ h6 {
 }
 @media (min-width: 992px) {
   .header-wrapper .row > * {
-    height: 173px;
+    height: 163px;
   }
 }
 @media (min-width: 768px) {
@@ -73,7 +48,7 @@ h6 {
 }
 @media (min-width: 992px) {
   .main-wrapper {
-    margin-top: 193px;
+    margin-top: 183px;
   }
 }
 /*Navigation*********************************************************************/
@@ -124,7 +99,7 @@ h6 {
 }
 @media (min-width: 992px) {
   .header-logo {
-    margin: 10px auto 20px auto;
+    margin: 10px auto 10px auto;
   }
 }
 .header-logo img {
@@ -146,6 +121,12 @@ ul.contact {
   padding: 0;
   margin: 0;
 }
+@media (max-width: 991px) {
+  ul.contact {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
 @media (min-width: 768px) {
   ul.contact {
     position: relative;
@@ -158,32 +139,40 @@ ul.contact {
 }
 ul.contact li {
   display: inline-block;
-  margin: 10px;
+  margin: 13px;
   float: left;
 }
-ul.contact li a {
+ul.contact li a.instagram {
   display: block;
-  background: #c1cac5 url('images/icons-contact.png');
-  width: 32px;
-  height: 32px;
+  background: white url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
+  background-position: 0 0;
+}
+ul.contact li a.instagram:hover {
+  background-position: 0 24px;
 }
 ul.contact li a.facebook {
-  background-position: 0px 0px;
+  display: block;
+  background: white url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: -50px 0;
 }
-ul.contact li a.twitter {
-  background-position: -48px 0px;
+ul.contact li a.facebook:hover {
+  background-position: -50px 24px;
 }
-ul.contact li a.googleplus {
-  background-position: -288px 0px;
+ul.contact li a.skype {
+  display: block;
+  background: white url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: -100px 0;
 }
-ul.contact li:hover a.facebook {
-  background-color: #3C5A98;
-}
-ul.contact li:hover a.twitter {
-  background-color: #2DAAE4;
-}
-ul.contact li:hover a.googleplus {
-  background-color: #DA2713;
+ul.contact li a.skype:hover {
+  background-position: -100px 24px;
 }
 /*# sourceMappingURL=main.css.map */
