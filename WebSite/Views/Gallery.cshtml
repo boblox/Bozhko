@@ -31,6 +31,7 @@
             Category = category.ToLower()
         }));
     }
+    allMedia = allMedia.RandomOrder().ToList(); //chaoticly order images
 
     var imageCategories = Helper.GetDataTypePreValues(
         dataTypeService,
@@ -40,8 +41,8 @@
 
 @section Scripts
 {
-    @Styles.Render("~/css/magnific-popup-css")
-    @Scripts.Render("~/js/magnific-popup-js")
+    @*@Styles.Render("~/css/magnific-popup-css")
+    @Scripts.Render("~/js/magnific-popup-js")*@
 }
 <div class="main-wrapper">
     <div class="container">

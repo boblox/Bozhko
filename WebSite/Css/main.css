@@ -72,6 +72,9 @@
   clear: both;
 }
 /*Basic styles*********************************************************************/
+body {
+  letter-spacing: 1px;
+}
 h1,
 h2,
 h3,
@@ -113,6 +116,7 @@ h6 {
 }
 .main-wrapper {
   margin-top: 75px;
+  margin-bottom: 25px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .main-wrapper {
@@ -166,6 +170,10 @@ h6 {
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   transition: all 0.4s;
+}
+/*Navigation mobile button*/
+.navbar-toggle {
+  margin-right: 0;
 }
 /*Header*********************************************************************/
 .header-logo {
@@ -282,24 +290,24 @@ ul.contact li a.skype:hover {
   margin: 0 auto;
 }
 .gallery-images .gallery-item {
-  width: 400px;
-  padding: 10px;
+  width: 350px;
+  padding: 5px;
   opacity: 0;
   /*By default-invisible*/
 }
 @media (min-width: 768px) {
   .gallery-images .gallery-item {
-    width: 375px;
+    width: 240px;
   }
 }
 @media (min-width: 992px) {
   .gallery-images .gallery-item {
-    width: 323.33333333px;
+    width: 313.33333333px;
   }
 }
 @media (min-width: 1200px) {
   .gallery-images .gallery-item {
-    width: 292.5px;
+    width: 228px;
   }
 }
 .gallery-images .gallery-item a {
@@ -444,5 +452,39 @@ ul.contact li a.skype:hover {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   backface-visibility: hidden;
+}
+/*News Overview**************************************************************/
+.news-item {
+  display: block;
+  padding: 10px 5px 20px 5px;
+  text-align: center;
+}
+.news-item:hover {
+  background-color: #d7d7d7;
+}
+.news-item .news-item-title {
+  margin: 15px 5px 0 5px;
+  font-size: 1.28em;
+}
+.news-item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+/*Content pages********************************************************/
+.content-wrapper {
+  border-top: 1px solid #969696;
+}
+.content-wrapper header {
+  text-align: center;
+}
+.content-wrapper .text-content {
+  margin-top: 30px;
+}
+.content-wrapper .text-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 /*# sourceMappingURL=main.css.map */

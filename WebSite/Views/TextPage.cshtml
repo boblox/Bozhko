@@ -18,14 +18,9 @@
 
 @section Body
 {
-    <header>
-        <h1>@pageTitle</h1>
-    </header>
-    <div class="text-content">
-        @CurrentPage.BodyText
+    <div class="content-wrapper">
+        <div class="text-content">
+            @CurrentPage.BodyText
+        </div>
     </div>
 }
-@*@section Sidebar
-{
-    @{ Html.RenderPartial("NewsWithHeaderSidebar"); }
-}*@

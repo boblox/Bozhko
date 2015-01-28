@@ -18,9 +18,6 @@
     <div class="visible-xs-inline-block">
         @{Html.RenderPartial("Logo");}
     </div>
-    <div class="visible-xs-inline-block pull-right">
-        @{Html.RenderPartial("Social");}
-    </div>
 </div>
 
 <div class="collapse navbar-collapse" id="navigation">
@@ -31,5 +28,8 @@
             Html.RenderPartial("TopNavigationList", dict);
         }
     </ul>
+    <div class="visible-xs-inline-block pull-right">
+        @{Html.RenderPartial("Social");}
+    </div>
 </div>
 <!-- /Nav -->

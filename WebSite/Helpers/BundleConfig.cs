@@ -11,6 +11,7 @@ namespace Site.Helpers
             //Basic Js&Css============================================================
             var styleBundle = new StyleBundle("~/css/basic-css")
                 .Include("~/css/jquery-ui.min.css")
+                .Include("~/css/magnific-popup.css")
                 .Include("~/css/styles.min.css");
             styleBundle.Orderer = orderer;
             bundles.Add(styleBundle);
@@ -23,6 +24,7 @@ namespace Site.Helpers
                 .Include("~/js/bootstrap.min.js")
                 .Include("~/js/imagesloaded.pkgd.min.js")
                 .Include("~/js/masonry.pkgd.min.js")
+                .Include("~/js/magnific.popup.min.js")
                 .Include("~/js/config.js");
             scriptBundle.Orderer = orderer;
             bundles.Add(scriptBundle);

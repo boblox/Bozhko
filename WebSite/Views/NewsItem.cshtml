@@ -23,23 +23,12 @@
 
 @section Body
 {
-    <header>
-        <h1>@pageTitle</h1>
-    </header>
-    <ul class="meta">
-        <li class="timestamp">@dateTime.ToString("f")</li>
-    </ul>
-    <div class="text-content">
-
-        @CurrentPage.BodyText
+    <div class="content-wrapper">
+        <header>
+            <h3>@pageTitle</h3>
+        </header>
+        <div class="text-content">
+            @CurrentPage.BodyText
+        </div>
     </div>
 }
-
-@section Sidebar
-{
-    @{ Html.RenderPartial("NewsWithHeaderSidebar"); }
-}
-
-@*@section Footer{
-        @{ Html.RenderPartial("Features"); }
-    }*@

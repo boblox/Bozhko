@@ -88,4 +88,27 @@
   padding-right: 0;
   padding-left: 0;
 }
+/*Create custom 5 column layout for bootstrap*/
+.col-15 > .col-xs-1 {
+  width: 6.66666667%;
+  float: left;
+}
+.col-15 > .col-xs-1 1, .col-xs-15, .col-sm-15, .col-md-15, .col-lg-15, .col-xs-16, .col-sm-16, .col-md-16, .col-lg-16, .col-xs-17, .col-sm-17, .col-md-17, .col-lg-17, .col-xs-18, .col-sm-18, .col-md-18, .col-lg-18, .col-xs-19, .col-sm-19, .col-md-19, .col-lg-19, .col-xs-20, .col-sm-20, .col-md-20, .col-lg-20, .col-xs-21, .col-sm-21, .col-md-21, .col-lg-21, .col-xs-22, .col-sm-22, .col-md-22, .col-lg-22, .col-xs-23, .col-sm-23, .col-md-23, .col-lg-23, .col-xs-24, .col-sm-24, .col-md-24, .col-lg-24 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.col-15 > .col-xs-1 1, .col-xs-15, .col-xs-16, .col-xs-17, .col-xs-18, .col-xs-19, .col-xs-20, .col-xs-21, .col-xs-22, .col-xs-23, .col-xs-24 {
+  float: left;
+}
+.col-15 > .col-xs-offset-1 {
+  margin-left: 6.66666667%;
+}
+.col-15 > .col-xs-push-1 {
+  left: 6.66666667%;
+}
+.col-15 > .col-xs-pull-1 {
+  right: 6.66666667%;
+}
 /*# sourceMappingURL=mixins.css.map */
