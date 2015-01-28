@@ -275,8 +275,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\BundleConfig.cs" />
+    <Compile Include="Helpers\SiteConstants.cs" />
     <Compile Include="Helpers\Global.cs" />
     <Compile Include="Helpers\NonOrderingBundleOrderer.cs" />
+    <Compile Include="Models\CategorizedMedia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="App_Plugins\DiploTraceLogViewer\backoffice\diplotracelog\detail.html" />
     <Content Include="App_Plugins\DiploTraceLogViewer\backoffice\diplotracelog\edit.html" />
@@ -320,6 +322,8 @@
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\imagesloaded.pkgd.min.js" />
+    <Content Include="js\masonry.pkgd.min.js" />
     <Content Include="usercontrols\ImageGenInstaller.ascx" />
   </ItemGroup>
   <ItemGroup>
@@ -849,6 +853,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\LayoutCustom.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\bootstrap-n-column.less" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

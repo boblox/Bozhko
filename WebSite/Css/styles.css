@@ -6966,6 +6966,9 @@ h6 {
 }
 #navigation.navbar-collapse .navbar-nav > li a {
   padding: 5px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
 }
 /*Header*********************************************************************/
 .header-logo {
@@ -6997,7 +7000,7 @@ ul.contact {
   padding: 0;
   margin: 0;
 }
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   ul.contact {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -7017,6 +7020,11 @@ ul.contact li {
   display: inline-block;
   margin: 13px;
   float: left;
+}
+ul.contact li a {
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
 }
 ul.contact li a.instagram {
   display: block;
@@ -7050,6 +7058,195 @@ ul.contact li a.skype {
 }
 ul.contact li a.skype:hover {
   background-position: -100px 24px;
+}
+/*Portfolio*********************************************************/
+.gallery-categories {
+  margin: 10px 0;
+}
+.gallery-categories .gallery-category {
+  font-family: "Hattori Hanzo", Arial;
+  letter-spacing: 1px;
+  color: black;
+  font-weight: bold;
+  padding: 0 10px;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.gallery-categories .gallery-category.active {
+  color: #969696;
+}
+.gallery-categories .gallery-category:hover {
+  color: #969696;
+}
+.gallery-images {
+  margin: 0 auto;
+}
+.gallery-images .gallery-item {
+  width: 400px;
+  padding: 10px;
+  opacity: 0;
+  /*By default-invisible*/
+}
+@media (min-width: 768px) {
+  .gallery-images .gallery-item {
+    width: 375px;
+  }
+}
+@media (min-width: 992px) {
+  .gallery-images .gallery-item {
+    width: 323.33333333px;
+  }
+}
+@media (min-width: 1200px) {
+  .gallery-images .gallery-item {
+    width: 292.5px;
+  }
+}
+.gallery-images .gallery-item a {
+  display: block;
+}
+.gallery-images .gallery-item a img {
+  margin: 0 auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/*Magnific PopUp******************************************************/
+.mfp-container .custom-arrow {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  font-size: 30px;
+  opacity: 0;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  color: white;
+  -webkit-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+.mfp-container .custom-arrow:hover {
+  opacity: 1;
+}
+.mfp-container .custom-arrow.arrow-left {
+  left: 0;
+  padding-left: 20px;
+  text-align: left;
+}
+.mfp-container .custom-arrow.arrow-left span {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.mfp-container .custom-arrow.arrow-left span:before {
+  content: "\e079";
+}
+.mfp-container .custom-arrow.arrow-right {
+  right: 0;
+  padding-right: 20px;
+  text-align: right;
+}
+.mfp-container .custom-arrow.arrow-right span {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.mfp-container .custom-arrow.arrow-right span:before {
+  content: "\e080";
+}
+/*Animation at open*************************/
+/* overlay at start */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+  /* overlay animate in */
+  opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+  /* overlay animate out */
+  opacity: 0;
+}
+.mfp-fade.mfp-wrap .mfp-content {
+  /* content at start */
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  /* content animate it */
+  opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  /* content animate out */
+  opacity: 0;
+}
+/*Animation when switching images*************/
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.mfp-figure {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 /*Mixins****************************************************/
 .vertical-align-middle {

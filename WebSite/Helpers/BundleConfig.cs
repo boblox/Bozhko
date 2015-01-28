@@ -21,6 +21,8 @@ namespace Site.Helpers
                 .Include("~/js/jquery.validate.min.js")
                 .Include("~/js/jquery.validate.unobtrusive.min.js")
                 .Include("~/js/bootstrap.min.js")
+                .Include("~/js/imagesloaded.pkgd.min.js")
+                .Include("~/js/masonry.pkgd.min.js")
                 .Include("~/js/config.js");
             scriptBundle.Orderer = orderer;
             bundles.Add(scriptBundle);
