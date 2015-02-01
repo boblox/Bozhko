@@ -286,6 +286,18 @@
     <Content Include="App_Plugins\DiploTraceLogViewer\backoffice\diplotracelog\ng-table\ng-table.min.js" />
     <Content Include="App_Plugins\DiploTraceLogViewer\backoffice\diplotracelog\tracelog.css" />
     <Content Include="App_Plugins\DiploTraceLogViewer\readme.txt" />
+    <Content Include="Css\bootstrap-n-column.css">
+      <DependentUpon>bootstrap-n-column.less</DependentUpon>
+    </Content>
+    <Content Include="Css\bootstrap-n-column.min.css">
+      <DependentUpon>bootstrap-n-column.css</DependentUpon>
+    </Content>
+    <Content Include="Css\Bootstrap\bootstrap.css">
+      <DependentUpon>bootstrap.less</DependentUpon>
+    </Content>
+    <Content Include="Css\Bootstrap\bootstrap.min.css">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
     <Content Include="Css\globals.css">
       <DependentUpon>globals.less</DependentUpon>
     </Content>
@@ -293,6 +305,8 @@
       <DependentUpon>globals.css</DependentUpon>
     </Content>
     <Content Include="Css\images\logo.png" />
+    <Content Include="Css\images\magnific-popup-arrow.png" />
+    <Content Include="Css\images\magnific-popup-close.png" />
     <Content Include="Css\main.css">
       <DependentUpon>main.less</DependentUpon>
     </Content>
@@ -323,6 +337,7 @@
     <Content Include="Global.asax" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\imagesloaded.pkgd.min.js" />
+    <Content Include="js\jquery.unveil.js" />
     <Content Include="js\masonry.pkgd.min.js" />
     <Content Include="usercontrols\ImageGenInstaller.ascx" />
   </ItemGroup>
@@ -856,6 +871,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Css\bootstrap-n-column.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\Bootstrap\bootstrap.css.map">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Css\bootstrap-n-column.css.map">
+      <DependentUpon>bootstrap-n-column.css</DependentUpon>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

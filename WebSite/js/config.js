@@ -1,26 +1,62 @@
 /*********************************************=Header(scrolling)=************************************************************/
 
-var scrollFromTop = 100;
-$(window).bind('scroll', function () {
-    if ($(window).scrollTop() > scrollFromTop) {
-        $('.header-wrapper').addClass('scrolled');
-    } else {
-        $('.header-wrapper').removeClass('scrolled');
-    }
-});
-
+function InitHeaderScrolling() {
+    var scrollFromTop = 100;
+    $(window).bind('scroll', function () {
+        if ($(window).scrollTop() > scrollFromTop) {
+            $('.header-wrapper').addClass('scrolled');
+        } else {
+            $('.header-wrapper').removeClass('scrolled');
+        }
+    });
+}
 
 /*********************************************=Gallery(Portfolio)=************************************************************/
 
-$(document).ready(function () {
+function InitGallery() {
     var imagesContainer = $('.gallery-images');
-    var images = imagesContainer.find('.gallery-item');
+    var galleryItems = imagesContainer.find('.gallery-item');
+    var images = galleryItems.find("img");
     var imageCategories = $('.gallery-category');
 
-    function reloadMasonry() {
+    function loadMasonry() {
+        var masonry = imagesContainer.masonry({
+            itemSelector: '.masonry-item',
+            //gutter: 10,
+            columnWidth: '.masonry-item',
+            //columnWidth: 215,
+            isFitWidth: true
+        });
+    }
+
+    function reloadMasonry(loadImages) {
         //reload masonry
-        imagesContainer.masonry();
-        loadMagnificPopUp();
+        loadImages = typeof loadImages !== 'undefined' ? loadImages : true;
+
+        if (loadImages) {
+            imagesContainer.masonry('on', 'layoutComplete', function () {
+                loadImagesOnScroll();
+                return true; //run only once
+            });
+            loadMagnificPopUp();
+
+            //use this 2 methods in pair because of bug in masonry. reloadItems needed for layoutComplete to be called...
+            imagesContainer.masonry('reloadItems'); //this call adds .masonry-item el-s to calculations but doesn't re-layout them on screen
+            imagesContainer.masonry();
+        }
+        else {
+            //imagesContainer.masonry('reloadItems'); //this doesn't needed
+            imagesContainer.masonry();
+        }
+    }
+
+    function loadImagesOnScroll() {
+        images.filter(".not-loaded").unveil(100, function () {
+            $(this).load(function () {
+                reloadMasonry(false);
+                $(this).removeClass("not-loaded").fadeTo(1500, 1);
+            });
+        });
     }
 
     function loadMagnificPopUp() {
@@ -35,10 +71,12 @@ $(document).ready(function () {
                 enabled: true,
                 preload: [0, 1],
                 arrowMarkup: '<button title="%title%" type="button" class="custom-arrow arrow-%dir%">' +
-                                '<span></span>' +
+                                '<div class="mfp-prevent-close"></div>' +
                              '</button>'
             },
-            closeMarkup: '<button title="%title%" class="mfp-close"><span class="glyphicon glyphicon-remove-circle"></span></button>',
+            closeMarkup: '<button title="%title%" class="mfp-close">' +
+                            //'<span class="glyphicon glyphicon-remove-circle"></span>' +
+                        '</button>',
             mainClass: 'mfp-fade',
             removalDelay: 300,
             callbacks: {
@@ -58,19 +96,19 @@ $(document).ready(function () {
         categoryEl.addClass('active');
 
         if (category == "all") {
-            images.fadeIn('slow').addClass('masonry-item');
+            galleryItems.fadeIn('slow').addClass('masonry-item');
             reloadMasonry();
         }
         else {
             var counter = 0;
             function waitForAll() {
                 counter++;
-                if (counter == images.length) {
+                if (counter == galleryItems.length) {
                     reloadMasonry();
                 }
             }
 
-            images.each(function () {
+            galleryItems.each(function () {
                 $(this).hasClass(category) ?
                     $(this).fadeIn('slow', waitForAll).addClass('masonry-item') :
                     $(this).fadeOut('slow', waitForAll).removeClass('masonry-item');
@@ -78,25 +116,16 @@ $(document).ready(function () {
         }
     }
 
-    //images.fadeTo(0, 0);
-    imagesContainer.imagesLoaded(function () {
-        imagesContainer.masonry({
-            itemSelector: '.masonry-item',
-            //gutter: 10,
-            columnWidth: '.masonry-item',
-            //columnWidth: 215,
-            isFitWidth: true
-        });
-        images.fadeTo('slow', 1);
-    });
-
+    loadImagesOnScroll();
+    loadMasonry();
     loadMagnificPopUp();
 
+    //click on category
     imageCategories.on('click', function () {
         var category = $(this).text().toLowerCase().trim();
         setSelectedCategory(category);
     });
-});
+};
 
 /*****************************************Google analytics******************************************************************/
 (function (i, s, o, g, r, a, m) {

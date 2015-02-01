@@ -39,11 +39,6 @@
     var widthPerCategory = 24 / (imageCategories.Count() + 1);
 }
 
-@section Scripts
-{
-    @*@Styles.Render("~/css/magnific-popup-css")
-    @Scripts.Render("~/js/magnific-popup-js")*@
-}
 <div class="main-wrapper">
     <div class="container">
         <div class="gallery-categories">
@@ -58,31 +53,36 @@
     </div>
     <div class="container-fluid">
         <div class="gallery-images">
-            @*<div class="row">*@
+            @*<div class="gallery-item masonry-item"></div>*@
             @foreach (var media in allMedia)
             {
                 @RenderImage(@media)
             }
-            @*</div>*@
         </div>
     </div>
+    <script type="text/javascript">
+        $(function () {
+            InitGallery();
+        });
+    </script>
 </div>
 
 @helper RenderCategory(string name, bool isActive, int widthPerCategory)
 {
     <div class="col-sm-@widthPerCategory text-center">
-        <h5 class="@(isActive ? "active": null) gallery-category">
+        <h4 class="@(isActive ? "active": null) gallery-category">
             @name.ToUpperInvariant()
-        </h5>
+        </h4>
     </div>
 }
 
-@helper RenderImage(CategorizedMedia categorizedMedia) {
-    var category=categorizedMedia.Category;
-    var media=categorizedMedia.Media;
+@helper RenderImage(CategorizedMedia categorizedMedia)
+{
+    var category = categorizedMedia.Category;
+    var media = categorizedMedia.Media;
     <div class="@category gallery-item masonry-item">
         <a href="@media.Url" title="@media.Name">
-            <img src="@Html.GetThumbnailUrl((string)media.Url)" alt="" />
+            <img data-src="@Html.GetThumbnailUrl((string)media.Url)" alt="" class="not-loaded" />
         </a>
     </div>
 }

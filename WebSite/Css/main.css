@@ -1,4 +1,5 @@
-﻿.thumbnail > img,
+﻿/*!Main.css*/
+.thumbnail > img,
 .thumbnail a > img,
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
@@ -272,7 +273,7 @@ ul.contact li a.skype:hover {
   font-family: "Hattori Hanzo", Arial;
   letter-spacing: 1px;
   color: black;
-  font-weight: bold;
+  /*font-weight: bold;*/
   padding: 0 10px;
   display: inline-block;
   cursor: pointer;
@@ -292,7 +293,8 @@ ul.contact li a.skype:hover {
 .gallery-images .gallery-item {
   width: 350px;
   padding: 5px;
-  opacity: 0;
+  float: left;
+  /*opacity: 0;*/
   /*By default-invisible*/
 }
 @media (min-width: 768px) {
@@ -314,23 +316,36 @@ ul.contact li a.skype:hover {
   display: block;
 }
 .gallery-images .gallery-item a img {
+  opacity: 0;
   margin: 0 auto;
   display: block;
   max-width: 100%;
   height: auto;
 }
+.gallery-images .gallery-item a img.not-loaded {
+  min-height: 100px;
+}
 /*Magnific PopUp******************************************************/
+.mfp-container .mfp-close {
+  right: 0;
+  background: transparent url('images/magnific-popup-close.png') no-repeat right 8px;
+}
+.mfp-container .mfp-figure:after {
+  top: 50px;
+}
+.mfp-container img.mfp-img {
+  padding: 50px 0;
+}
 .mfp-container .custom-arrow {
   position: absolute;
-  top: 0;
+  z-index: 1000;
+  top: 10%;
   width: 50%;
-  height: 100%;
-  font-size: 30px;
+  height: 80%;
   opacity: 0;
-  background: transparent;
   cursor: pointer;
   border: none;
-  color: white;
+  background: transparent;
   -webkit-transition: opacity 0.2s;
   -o-transition: opacity 0.2s;
   transition: opacity 0.2s;
@@ -338,43 +353,28 @@ ul.contact li a.skype:hover {
 .mfp-container .custom-arrow:hover {
   opacity: 1;
 }
+.mfp-container .custom-arrow div {
+  background: url('images/magnific-popup-arrow.png') transparent no-repeat;
+  height: 64px;
+}
 .mfp-container .custom-arrow.arrow-left {
   left: 0;
-  padding-left: 20px;
-  text-align: left;
+  padding-left: 35px;
 }
-.mfp-container .custom-arrow.arrow-left span {
-  position: relative;
-  top: 1px;
-  display: inline-block;
-  font-family: 'Glyphicons Halflings';
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.mfp-container .custom-arrow.arrow-left span:before {
-  content: "\e079";
+.mfp-container .custom-arrow.arrow-left div {
+  background-position: right center;
+  /*right because of scaleX*/
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 .mfp-container .custom-arrow.arrow-right {
   right: 0;
-  padding-right: 20px;
-  text-align: right;
+  padding-right: 35px;
 }
-.mfp-container .custom-arrow.arrow-right span {
-  position: relative;
-  top: 1px;
-  display: inline-block;
-  font-family: 'Glyphicons Halflings';
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.mfp-container .custom-arrow.arrow-right span:before {
-  content: "\e080";
+.mfp-container .custom-arrow.arrow-right div {
+  background-position: right center;
 }
 /*Animation at open*************************/
 /* overlay at start */

@@ -24,6 +24,7 @@ namespace Site.Helpers
                 .Include("~/js/bootstrap.min.js")
                 .Include("~/js/imagesloaded.pkgd.min.js")
                 .Include("~/js/masonry.pkgd.min.js")
+                .Include("~/js/jquery.unveil.js")
                 .Include("~/js/magnific.popup.min.js")
                 .Include("~/js/config.js");
             scriptBundle.Orderer = orderer;
