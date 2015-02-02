@@ -127,6 +127,30 @@ function InitGallery() {
     });
 };
 
+/*********************************************=ImagesCarousel=****************************************************************/
+
+function InitImagesCarousel(carouselWrapperId) {
+    var carouselWrapper = $("#" + carouselWrapperId);
+    var carousel = carouselWrapper.find('.owl-carousel');
+    carousel.owlCarousel({
+        items: 1,
+        lazyLoad: true,
+        dotsSpeed: 800,
+        //smartSpeed:3000,
+        animateOut: 'fadeOut',
+        //nav: true,
+        //animateIn: 'fadeIn'
+    });
+
+    //new next-prev buttons
+    //carouselWrapper.find('.owl-carousel-prev').click(function () {
+    //    carousel.trigger('prev.owl.carousel', [800]);
+    //});
+    //carouselWrapper.find('.owl-carousel-next').click(function () {
+    //    carousel.trigger('next.owl.carousel', [800]);
+    //});
+}
+
 /*****************************************Google analytics******************************************************************/
 (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {

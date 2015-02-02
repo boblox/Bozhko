@@ -31,15 +31,15 @@ namespace Site.Helpers
             bundles.Add(scriptBundle);
 
             //Magnific Pop-Up=========================================================
-            styleBundle = new StyleBundle("~/css/magnific-popup-css")
-                .Include("~/css/magnific-popup.css");
-            styleBundle.Orderer = orderer;
-            bundles.Add(styleBundle);
+            //styleBundle = new StyleBundle("~/css/magnific-popup-css")
+            //    .Include("~/css/magnific-popup.css");
+            //styleBundle.Orderer = orderer;
+            //bundles.Add(styleBundle);
 
-            scriptBundle = new ScriptBundle("~/js/magnific-popup-js")
-                .Include("~/js/magnific.popup.min.js");
-            scriptBundle.Orderer = orderer;
-            bundles.Add(scriptBundle);
+            //scriptBundle = new ScriptBundle("~/js/magnific-popup-js")
+            //    .Include("~/js/magnific.popup.min.js");
+            //scriptBundle.Orderer = orderer;
+            //bundles.Add(scriptBundle);
 
             //Owl Carousel ===========================================================
             styleBundle = new StyleBundle("~/css/OwlCarousel/carousel-css")

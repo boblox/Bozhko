@@ -274,10 +274,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Helpers\BundleConfig.cs" />
-    <Compile Include="Helpers\SiteConstants.cs" />
+    <Compile Include="Helpers\Consts.cs" />
     <Compile Include="Helpers\Global.cs" />
     <Compile Include="Helpers\NonOrderingBundleOrderer.cs" />
+    <Compile Include="Models\Gallery.cs" />
     <Compile Include="Models\CategorizedMedia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="App_Plugins\DiploTraceLogViewer\backoffice\diplotracelog\detail.html" />

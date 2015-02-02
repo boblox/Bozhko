@@ -1,41 +1,14 @@
 ﻿@using System.Web.Optimization;
 @using Site.Helpers;
 @using Site.Models;
-@inherits UmbracoTemplatePage
+@inherits UmbracoViewPage<Gallery>
 @{
     Layout = "LayoutBase.cshtml";
 
-    // If the editor has not explicitly provided the "Page title" property page
-    // then just show the name of the page otherwise show the provided title
-    var pageTitle = string.IsNullOrWhiteSpace(CurrentPage.Title)
-        ? CurrentPage.Name
-        : CurrentPage.Title;
-
     var dataTypeService = ApplicationContext.Current.Services.DataTypeService;
-    var subGalleries = CurrentPage.GalleryCategories;
-    var allMedia = new List<CategorizedMedia>();
-    foreach (var subGallery in subGalleries)
-    {
-        var category = subGallery.Category;
-        var mediaStr = (string)subGallery.Images;
-        var mediaIds = mediaStr.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-        var media = Umbraco.TypedMedia(mediaIds).ToList();
-        //check for folders
-        var folders = media.Where(i => i.DocumentTypeAlias == "Folder").ToList();
-        folders.ForEach(i => media.Remove(i));
-        media.AddRange(folders.SelectMany(i => i.Children.Where(j => j.DocumentTypeAlias == "Image")));
-
-        allMedia.AddRange(media.Select(i => new CategorizedMedia
-        {
-            Media = i,
-            Category = category.ToLower()
-        }));
-    }
-    allMedia = allMedia.RandomOrder().ToList(); //chaoticly order images
-
     var imageCategories = Helper.GetDataTypePreValues(
         dataTypeService,
-        SiteConstants.ImageCategoryDataType);
+        Consts.DataTypes.ImageCategory);
     var widthPerCategory = 24 / (imageCategories.Count() + 1);
 }
 
@@ -54,7 +27,7 @@
     <div class="container-fluid">
         <div class="gallery-images">
             @*<div class="gallery-item masonry-item"></div>*@
-            @foreach (var media in allMedia)
+            @foreach (var media in Model.Media)
             {
                 @RenderImage(@media)
             }

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
+using Umbraco.Core.Models;
 using Umbraco.Core.Services;
 
 namespace Logic.Helpers
@@ -15,6 +17,11 @@ namespace Logic.Helpers
         {
             var dataType = service.GetDataTypeDefinitionByName(dataTypeName);
             return service.GetPreValuesByDataTypeId(dataType.Id);
+        }
+
+        public static IEnumerable<IPublishedContent> ChildrenOfDocType(this IPublishedContent content, string docTypeAlias)
+        {
+            return content.Children.Where(i => i.DocumentTypeAlias == docTypeAlias);
         }
     }
 }

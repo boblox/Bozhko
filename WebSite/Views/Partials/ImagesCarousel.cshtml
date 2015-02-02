@@ -6,43 +6,20 @@
 
 @if (carouselImages.Count() > 0)
 {
-    @*<div class="row">
-        <div class="12u">*@
-            <div id="@id" class="carousel-wrapper">
-                <div class="owl-carousel-prev not-mobile"></div>
-                <div class="owl-carousel">
-                    @foreach (var image in carouselImages)
-                    {
-                        <img class="owl-lazy" data-src="@image.Url" />
-                    }
-                </div>
-                <div class="owl-carousel-next not-mobile"></div>
-            </div>
-        @*</div>
-    </div>*@
-    <script type="text/javascript">
-        $(document).ready(function () {
-            //carousel is dependent on set width by skel.js for html elements. 
-            //load it some time after skel.js
-            setTimeout(function () {
-                var carouselWrapper = $("#@id");
-                var carousel = carouselWrapper.find('.owl-carousel');
-                carousel.owlCarousel({
-                    items: 1,
-                    lazyLoad: true,
-                    dotsSpeed: 800,
-                    //smartSpeed:3000,
-                    animateOut: 'fadeOut',
-                    //animateIn: 'fadeIn'
-                });
+    <div id="@id" class="carousel-wrapper">
+        <div class="owl-carousel-prev not-mobile"></div>
+        <div class="owl-carousel">
+            @foreach (var image in carouselImages)
+            {
+                <img class="owl-lazy" data-src="@image.Url" />
+            }
+        </div>
+        <div class="owl-carousel-next not-mobile"></div>
+    </div>
 
-                carouselWrapper.find('.owl-carousel-prev').click(function () {
-                    carousel.trigger('prev.owl.carousel', [800]);
-                });
-                carouselWrapper.find('.owl-carousel-next').click(function () {
-                    carousel.trigger('next.owl.carousel', [800]);
-                });
-            }, 200);
+    <script type="text/javascript">
+        $(function () {
+            InitImagesCarousel('@id');
         });
     </script>
 }
