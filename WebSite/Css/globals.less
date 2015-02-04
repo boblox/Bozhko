@@ -6,7 +6,11 @@
 /*Form validation***************************************************/
 .field-validation-error {
     color: @state-danger-text;
-    margin-left: 5px;
+    display: inline-block;
+
+    @media(min-width:@screen-sm-min) {
+        margin-left: 10px;
+    }
 }
 
 /*Magnific PopUp******************************************************/
@@ -19,6 +23,7 @@
 
     .mfp-figure:after {
         top: 50px;
+        bottom: 50px;
     }
 
     img.mfp-img {
@@ -43,7 +48,7 @@
 
         div {
             background: url('images/magnific-popup-arrow.png') transparent no-repeat;
-            height: 64px;
+            height: 103px;
         }
 
         &.arrow-left {

@@ -10,7 +10,7 @@
     {
         var labelString = html.LabelFor(expression, new { @class = "col-sm-9 control-label" });
         var editorString = editor(expression);
-        var validationString = html.ValidationMessageFor(expression);
+        var validationString = html.ValidationMessageFor(expression, null, new{@class = "form-control-static"});
         return ContactFormEditorHelper(labelString, editorString, validationString);
     }
 }

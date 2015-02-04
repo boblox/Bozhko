@@ -3,7 +3,12 @@
 /*Form validation***************************************************/
 .field-validation-error {
   color: #a94442;
-  margin-left: 5px;
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  .field-validation-error {
+    margin-left: 10px;
+  }
 }
 /*Magnific PopUp******************************************************/
 .mfp-container .mfp-close {
@@ -12,6 +17,7 @@
 }
 .mfp-container .mfp-figure:after {
   top: 50px;
+  bottom: 50px;
 }
 .mfp-container img.mfp-img {
   padding: 50px 0;
@@ -35,7 +41,7 @@
 }
 .mfp-container .custom-arrow div {
   background: url('images/magnific-popup-arrow.png') transparent no-repeat;
-  height: 64px;
+  height: 103px;
 }
 .mfp-container .custom-arrow.arrow-left {
   left: 0;

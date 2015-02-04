@@ -2923,7 +2923,7 @@ output {
   color: #555555;
   background-color: #ffffff;
   background-image: none;
-  border: 1px solid black;
+  border: 1px solid #969696;
   border-radius: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -4125,7 +4125,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #555555;
   text-align: center;
   background-color: #eeeeee;
-  border: 1px solid black;
+  border: 1px solid #969696;
   border-radius: 4px;
 }
 .input-group-addon.input-sm {
@@ -8215,7 +8215,12 @@ ul.contact li a.skype:hover {
 /*Form validation***************************************************/
 .field-validation-error {
   color: #a94442;
-  margin-left: 5px;
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  .field-validation-error {
+    margin-left: 10px;
+  }
 }
 /*Magnific PopUp******************************************************/
 .mfp-container .mfp-close {
@@ -8224,6 +8229,7 @@ ul.contact li a.skype:hover {
 }
 .mfp-container .mfp-figure:after {
   top: 50px;
+  bottom: 50px;
 }
 .mfp-container img.mfp-img {
   padding: 50px 0;
@@ -8247,7 +8253,7 @@ ul.contact li a.skype:hover {
 }
 .mfp-container .custom-arrow div {
   background: url('images/magnific-popup-arrow.png') transparent no-repeat;
-  height: 64px;
+  height: 103px;
 }
 .mfp-container .custom-arrow.arrow-left {
   left: 0;

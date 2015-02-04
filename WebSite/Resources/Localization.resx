@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ContactFormClientEmail" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="ContactFormClientEmailInvalid" xml:space="preserve">
+    <value>Неправильный формат email-а</value>
+  </data>
+  <data name="ContactFormClientPhone" xml:space="preserve">
+    <value>Номер телефона</value>
+  </data>
   <data name="ContactFormDescription" xml:space="preserve">
     <value>Мне нужно...</value>
   </data>

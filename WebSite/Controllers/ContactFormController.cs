@@ -14,6 +14,7 @@ using System.Net.Mail;
 using System.Text;
 using Site.Resources;
 using HtmlAgilityPack;
+using Logic.Helpers;
 
 namespace Site.Controllers
 {
@@ -33,7 +34,7 @@ namespace Site.Controllers
 
                 var body = GetMailBody(model);
 
-                SendEmail(model.EmailFrom,
+                Helper.SendEmail(model.EmailFrom,
                     model.EmailTo,
                     Localization.ContactFormEmailSubject,
                     body);
@@ -66,6 +67,12 @@ namespace Site.Controllers
             ReplacePlaceholder(builder, "NameSurnameTitle", Localization.ContactFormNameSurname);
             ReplacePlaceholder(builder, "NameSurname", model.NameSurname);
 
+            ReplacePlaceholder(builder, "ClientEmailTitle", Localization.ContactFormClientEmail);
+            ReplacePlaceholder(builder, "ClientEmail", model.ClientEmail);
+
+            ReplacePlaceholder(builder, "ClientPhoneTitle", Localization.ContactFormClientPhone);
+            ReplacePlaceholder(builder, "ClientPhone", model.ClientPhone);
+
             ReplacePlaceholder(builder, "DescriptionTitle", Localization.ContactFormDescription);
             ReplacePlaceholder(builder, "Description", model.Description);
 
@@ -91,23 +98,6 @@ namespace Site.Controllers
             key = string.Format("[{0}]", key);
             value = HttpUtility.HtmlEncode(value);
             builder.Replace(key, value);
-        }
-
-        private void SendEmail(string emailFrom, string emailTo, string subject, string body)
-        {
-            var message = new MailMessage
-            {
-                From = new MailAddress(emailFrom, emailFrom),
-                Subject = subject,
-                SubjectEncoding = Encoding.UTF8,
-                Body = body,
-                BodyEncoding = Encoding.UTF8,
-                IsBodyHtml = true
-            };
-            message.To.Add(emailTo);
-
-            var smtpClient = new SmtpClient();
-            smtpClient.Send(message);
         }
 
         #endregion

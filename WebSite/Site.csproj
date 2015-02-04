@@ -318,8 +318,8 @@
     <Content Include="Css\globals.min.css">
       <DependentUpon>globals.css</DependentUpon>
     </Content>
-    <Content Include="Css\images\logo.png" />
     <Content Include="Css\images\magnific-popup-arrow.png" />
+    <Content Include="Css\images\logo.png" />
     <Content Include="Css\images\magnific-popup-close.png" />
     <Content Include="Css\main.css">
       <DependentUpon>main.less</DependentUpon>
@@ -928,6 +928,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\HtmlInput.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PhoneNumber.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -61,6 +61,33 @@ namespace Site.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to E-mail.
+        /// </summary>
+        public static string ContactFormClientEmail {
+            get {
+                return ResourceManager.GetString("ContactFormClientEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Неправильный формат email-а.
+        /// </summary>
+        public static string ContactFormClientEmailInvalid {
+            get {
+                return ResourceManager.GetString("ContactFormClientEmailInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Номер телефона.
+        /// </summary>
+        public static string ContactFormClientPhone {
+            get {
+                return ResourceManager.GetString("ContactFormClientPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Мне нужно....
         /// </summary>
         public static string ContactFormDescription {
