@@ -325,134 +325,6 @@ ul.contact li a.skype:hover {
 .gallery-images .gallery-item a img.not-loaded {
   min-height: 100px;
 }
-/*Magnific PopUp******************************************************/
-.mfp-container .mfp-close {
-  right: 0;
-  background: transparent url('images/magnific-popup-close.png') no-repeat right 8px;
-}
-.mfp-container .mfp-figure:after {
-  top: 50px;
-}
-.mfp-container img.mfp-img {
-  padding: 50px 0;
-}
-.mfp-container .custom-arrow {
-  position: absolute;
-  z-index: 1000;
-  top: 10%;
-  width: 50%;
-  height: 80%;
-  opacity: 0;
-  cursor: pointer;
-  border: none;
-  background: transparent;
-  -webkit-transition: opacity 0.2s;
-  -o-transition: opacity 0.2s;
-  transition: opacity 0.2s;
-}
-.mfp-container .custom-arrow:hover {
-  opacity: 1;
-}
-.mfp-container .custom-arrow div {
-  background: url('images/magnific-popup-arrow.png') transparent no-repeat;
-  height: 64px;
-}
-.mfp-container .custom-arrow.arrow-left {
-  left: 0;
-  padding-left: 35px;
-}
-.mfp-container .custom-arrow.arrow-left div {
-  background-position: right center;
-  /*right because of scaleX*/
-  -webkit-transform: scaleX(-1);
-  -ms-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  transform: scaleX(-1);
-}
-.mfp-container .custom-arrow.arrow-right {
-  right: 0;
-  padding-right: 35px;
-}
-.mfp-container .custom-arrow.arrow-right div {
-  background-position: right center;
-}
-/*Animation at open*************************/
-/* overlay at start */
-.mfp-fade.mfp-bg {
-  opacity: 0;
-  -webkit-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-.mfp-fade.mfp-bg.mfp-ready {
-  /* overlay animate in */
-  opacity: 0.8;
-}
-.mfp-fade.mfp-bg.mfp-removing {
-  /* overlay animate out */
-  opacity: 0;
-}
-.mfp-fade.mfp-wrap .mfp-content {
-  /* content at start */
-  opacity: 0;
-  -webkit-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
-  /* content animate it */
-  opacity: 1;
-}
-.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
-  /* content animate out */
-  opacity: 0;
-}
-/*Animation when switching images*************/
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-moz-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-o-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.mfp-figure {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
 /*News Overview**************************************************************/
 .news-item {
   display: block;
@@ -481,10 +353,21 @@ ul.contact li a.skype:hover {
 }
 .content-wrapper .text-content {
   margin-top: 25px;
+  font-size: 1.29em;
 }
 .content-wrapper .text-content img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+/*Contact Form********************************************************/
+.contact-form {
+  font-size: 0.77em;
+}
+.contact-form .control-label {
+  font-weight: normal;
+}
+.contact-form .btn {
+  font-size: 1.29em;
 }
 /*# sourceMappingURL=main.css.map */

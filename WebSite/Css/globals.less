@@ -1,1 +1,155 @@
 ﻿/*!Globals*/
+@import (reference) "Bootstrap/mixins.less";
+@import (reference) "Bootstrap/variables.less";
+/*@import (reference) "Bootstrap/labels.less";*/
+
+/*Form validation***************************************************/
+.field-validation-error {
+    color: @state-danger-text;
+    margin-left: 5px;
+}
+
+/*Magnific PopUp******************************************************/
+
+.mfp-container {
+    .mfp-close {
+        right: 0;
+        background: transparent url('images/magnific-popup-close.png') no-repeat right 8px;
+    }
+
+    .mfp-figure:after {
+        top: 50px;
+    }
+
+    img.mfp-img {
+        padding: 50px 0;
+    }
+
+    .custom-arrow {
+        position: absolute;
+        z-index: 1000;
+        top: 10%;
+        width: 50%;
+        height: 80%;
+        opacity: 0;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        .transition(opacity 0.2s);
+
+        &:hover {
+            opacity: 1;
+        }
+
+        div {
+            background: url('images/magnific-popup-arrow.png') transparent no-repeat;
+            height: 64px;
+        }
+
+        &.arrow-left {
+            left: 0;
+            padding-left: 35px;
+
+            div {
+                background-position: right center; /*right because of scaleX*/
+                .scaleX(-1);
+            }
+        }
+
+        &.arrow-right {
+            right: 0;
+            padding-right: 35px;
+
+            div {
+                background-position: right center;
+            }
+        }
+    }
+}
+
+/*Animation at open*************************/
+
+/* overlay at start */
+.mfp-fade {
+    &.mfp-bg {
+        opacity: 0;
+        .transition(all 0.3s ease-out);
+
+        &.mfp-ready {
+            /* overlay animate in */
+            opacity: 0.8;
+        }
+
+        &.mfp-removing {
+            /* overlay animate out */
+            opacity: 0;
+        }
+    }
+
+    &.mfp-wrap {
+        & .mfp-content {
+            /* content at start */
+            opacity: 0;
+            .transition(all 0.3s ease-out);
+        }
+
+        &.mfp-ready .mfp-content {
+            /* content animate it */
+            opacity: 1;
+        }
+
+        &.mfp-removing .mfp-content {
+            /* content animate out */
+            opacity: 0;
+        }
+    }
+}
+
+/*Animation when switching images*************/
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.mfp-figure {
+    .animation-name(fadeIn);
+    .animation-duration(.7s);
+    .animation-timing-function(ease-in-out);
+    .animation-fill-mode(both);
+    .backface-visibility(hidden);
+}

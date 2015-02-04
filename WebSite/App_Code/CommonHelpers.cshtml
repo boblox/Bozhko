@@ -1,4 +1,38 @@
-﻿@helper SimpleMenuItem(dynamic menuPage, dynamic currentPage)
+﻿@using System.Linq.Expressions
+@using System.Web.Mvc
+@using System.Web.Mvc.Html
+
+@functions
+{
+    public delegate MvcHtmlString EditorDelegate<TModel, TValue>(Expression<Func<TModel, TValue>> expression);
+
+    public static HelperResult ContactFormEditor<TModel, TValue>(HtmlHelper<TModel> html, Expression<Func<TModel, TValue>> expression, EditorDelegate<TModel, TValue> editor)
+    {
+        var labelString = html.LabelFor(expression, new { @class = "col-sm-9 control-label" });
+        var editorString = editor(expression);
+        var validationString = html.ValidationMessageFor(expression);
+        return ContactFormEditorHelper(labelString, editorString, validationString);
+    }
+}
+
+@helper ContactFormEditorHelper(MvcHtmlString labelString, MvcHtmlString editorString, MvcHtmlString validationString)
+{
+    <div class="form-group">
+        @labelString
+        <div class="col-sm-15">
+            <div class="row no-gutters">
+                <div class="col-sm-12">
+                    @editorString
+                </div>
+                <div class="col-sm-12">
+                    @validationString
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@helper SimpleMenuItem(dynamic menuPage, dynamic currentPage)
 {
     var itemTitle = string.IsNullOrWhiteSpace(menuPage.Title) ? menuPage.Name : menuPage.Title;
     <li class="@(currentPage.Id == menuPage.Id ? "active" : null)">
