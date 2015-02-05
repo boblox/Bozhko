@@ -10,6 +10,11 @@
     margin-left: 10px;
   }
 }
+/*Owl Carousel *******************************************************/
+.owl-carousel.owl-theme .owl-dots .owl-dot.active span,
+.owl-carousel.owl-theme .owl-dots .owl-dot:hover span {
+  background: black;
+}
 /*Magnific PopUp******************************************************/
 .mfp-container .mfp-close {
   right: 0;

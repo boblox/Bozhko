@@ -370,4 +370,8 @@ ul.contact li a.skype:hover {
 .contact-form .btn {
   font-size: 1.29em;
 }
+/*Disqus***************************************************************/
+.disqus-wrapper {
+  margin-top: 50px;
+}
 /*# sourceMappingURL=main.css.map */

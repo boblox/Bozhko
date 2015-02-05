@@ -2,6 +2,7 @@
 @import (reference) "Bootstrap/mixins.less";
 @import (reference) "Bootstrap/variables.less";
 /*@import (reference) "Bootstrap/labels.less";*/
+@import (reference) "variables.less";
 
 /*Form validation***************************************************/
 .field-validation-error {
@@ -10,6 +11,19 @@
 
     @media(min-width:@screen-sm-min) {
         margin-left: 10px;
+    }
+}
+
+/*Owl Carousel *******************************************************/
+
+.owl-carousel {
+    &.owl-theme {
+        .owl-dots .owl-dot {
+            &.active span,
+            &:hover span {
+                background: @black-color;
+            }
+        }
     }
 }
 

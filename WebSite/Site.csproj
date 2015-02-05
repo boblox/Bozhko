@@ -931,6 +931,9 @@
     <Content Include="Views\Shared\EditorTemplates\HtmlInput.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\PhoneNumber.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\Comments.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
