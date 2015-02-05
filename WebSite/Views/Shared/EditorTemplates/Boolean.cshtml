@@ -1,29 +1,26 @@
-﻿@model Nullable<Boolean>
-@{
-    var value = Model;
-    var triStateValues = new List<SelectListItem> {
-                new SelectListItem { Text = "Not Set",
-                                     Value = String.Empty,
-                                     Selected = !value.HasValue },
-                new SelectListItem { Text = "True",
-                                     Value = "true",
-                                     Selected = value.HasValue && value.Value },
-                new SelectListItem { Text = "False",
-                                     Value = "false",
-                                     Selected = value.HasValue && !value.Value }
-    };
+﻿@{
+    bool? value = null;
+    if (ViewData.Model != null)
+    {
+        value = Convert.ToBoolean(ViewData.Model, System.Globalization.CultureInfo.InvariantCulture);
+    }
 }
 
 @if (ViewData.ModelMetadata.IsNullableValueType)
 {
-    /*!This dropdown needs to be updated according to bootstrap*/
-    @Html.DropDownList(string.Empty, triStateValues, new { @class = "form-control" @*"list-box tri-state"*@ })
+    var triStateValues = new List<SelectListItem>
+    {
+                new SelectListItem { Text = "Not Set", Value = String.Empty, Selected = !value.HasValue },
+                new SelectListItem { Text = "True", Value = "true",  Selected = value.HasValue && value.Value },
+                new SelectListItem { Text = "False", Value = "false", Selected = value.HasValue && !value.Value }
+    };
+    @Html.DropDownList(string.Empty, triStateValues, new { @class = "form-control" })
 }
 else
 {
     <div class="checkbox">
         <label>
-            @Html.CheckBox(string.Empty, value ?? false, new { @class = "check-box" })
+            @Html.CheckBox(string.Empty, value ?? false)
         </label>
     </div>
 }
