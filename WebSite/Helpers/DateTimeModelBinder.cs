@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Site.Resources;
+using System;
 using System.Globalization;
 using System.Web.Mvc;
-using Logic.Resources;
 
-namespace Logic.Helpers
+namespace Site.Helpers
 {
-    public class MyDateTimeModelBinder : DefaultModelBinder
+    public class DateTimeModelBinder : DefaultModelBinder
     {
         public override object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
         {

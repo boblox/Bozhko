@@ -16,7 +16,7 @@ namespace Site.Helpers
         protected override void OnApplicationStarted(object sender, EventArgs e)
         {
             base.OnApplicationStarted(sender, e);
-            ModelBinders.Binders.Add(typeof(DateTime), new MyDateTimeModelBinder());
+            ModelBinders.Binders.Add(typeof(DateTime), new DateTimeModelBinder());
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataContext, Configuration>()); 
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }

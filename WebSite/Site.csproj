@@ -278,11 +278,12 @@
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Helpers\BundleConfig.cs" />
     <Compile Include="Helpers\Consts.cs" />
+    <Compile Include="Helpers\DateTimeModelBinder.cs" />
     <Compile Include="Helpers\Global.cs" />
+    <Compile Include="Helpers\HtmlHelperExtensions.cs" />
+    <Compile Include="Helpers\LanguageHelper.cs" />
     <Compile Include="Helpers\NonOrderingBundleOrderer.cs" />
-    <Compile Include="Models\ContactForm.cs" />
-    <Compile Include="Models\Gallery.cs" />
-    <Compile Include="Models\CategorizedMedia.cs" />
+    <Compile Include="Helpers\Utils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Localization.Designer.cs">
       <DependentUpon>Localization.resx</DependentUpon>
@@ -705,8 +706,6 @@
     <Content Include="Views\NewsItem.cshtml" />
     <Content Include="Views\NewsOverview.cshtml" />
     <Content Include="Views\Partials\Breadcrumb.cshtml" />
-    <Content Include="Views\Partials\Features.cshtml" />
-    <Content Include="Views\Partials\Footer.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
@@ -717,9 +716,6 @@
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
     <Content Include="Views\Partials\Header.cshtml" />
     <Content Include="Views\Partials\ImagesCarousel.cshtml" />
-    <Content Include="Views\Partials\NewsHorizontal.cshtml" />
-    <Content Include="Views\Partials\NewsSidebar.cshtml" />
-    <Content Include="Views\Partials\NewsWithHeaderSidebar.cshtml" />
     <Content Include="Views\Partials\Social.cshtml" />
     <Content Include="Views\Partials\TopNavigation.cshtml" />
     <Content Include="Views\Partials\TopNavigationList.cshtml" />
@@ -739,6 +735,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Models\" />
     <Folder Include="scripts\" />
   </ItemGroup>
   <ItemGroup>

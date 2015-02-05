@@ -61,87 +61,6 @@ namespace Site.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-mail.
-        /// </summary>
-        public static string ContactFormClientEmail {
-            get {
-                return ResourceManager.GetString("ContactFormClientEmail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Неправильный формат email-а.
-        /// </summary>
-        public static string ContactFormClientEmailInvalid {
-            get {
-                return ResourceManager.GetString("ContactFormClientEmailInvalid", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Номер телефона.
-        /// </summary>
-        public static string ContactFormClientPhone {
-            get {
-                return ResourceManager.GetString("ContactFormClientPhone", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Мне нужно....
-        /// </summary>
-        public static string ContactFormDescription {
-            get {
-                return ResourceManager.GetString("ContactFormDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Заказ фотосессии.
-        /// </summary>
-        public static string ContactFormEmailSubject {
-            get {
-                return ResourceManager.GetString("ContactFormEmailSubject", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Количество часов.
-        /// </summary>
-        public static string ContactFormHours {
-            get {
-                return ResourceManager.GetString("ContactFormHours", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Нужна пост обработка.
-        /// </summary>
-        public static string ContactFormIsPostProcessingNeeded {
-            get {
-                return ResourceManager.GetString("ContactFormIsPostProcessingNeeded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Нужно заказывать студию.
-        /// </summary>
-        public static string ContactFormIsStudioBookingNeeded {
-            get {
-                return ResourceManager.GetString("ContactFormIsStudioBookingNeeded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ФИО.
-        /// </summary>
-        public static string ContactFormNameSurname {
-            get {
-                return ResourceManager.GetString("ContactFormNameSurname", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Ваш заказ принят! С Вами свяжутся в ближайшее время.
         /// </summary>
         public static string ContactFormReceived {
@@ -174,15 +93,6 @@ namespace Site.Resources {
         public static string False {
             get {
                 return ResourceManager.GetString("False", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to *.
-        /// </summary>
-        public static string RequiredField {
-            get {
-                return ResourceManager.GetString("RequiredField", resourceCulture);
             }
         }
         

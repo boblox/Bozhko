@@ -117,7 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DateTimeInvalid" xml:space="preserve">
-    <value>{0} is an invalid date format</value>
+  <data name="ContactFormClientEmail" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="ContactFormClientEmailInvalid" xml:space="preserve">
+    <value>Неправильный формат email-а</value>
+  </data>
+  <data name="ContactFormClientPhone" xml:space="preserve">
+    <value>Номер телефона</value>
+  </data>
+  <data name="ContactFormDescription" xml:space="preserve">
+    <value>Мне нужно...</value>
+  </data>
+  <data name="ContactFormEmailSubject" xml:space="preserve">
+    <value>Заказ фотосессии</value>
+  </data>
+  <data name="ContactFormHours" xml:space="preserve">
+    <value>Количество часов</value>
+  </data>
+  <data name="ContactFormIsPostProcessingNeeded" xml:space="preserve">
+    <value>Нужна пост обработка</value>
+  </data>
+  <data name="ContactFormIsStudioBookingNeeded" xml:space="preserve">
+    <value>Нужно заказывать студию</value>
+  </data>
+  <data name="ContactFormNameSurname" xml:space="preserve">
+    <value>ФИО</value>
+  </data>
+  <data name="RequiredField" xml:space="preserve">
+    <value>*</value>
   </data>
 </root>

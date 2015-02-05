@@ -6,9 +6,9 @@ using Umbraco.Core.Services;
 using System.Net.Mail;
 using System.Text;
 
-namespace Logic.Helpers
+namespace Site.Helpers
 {
-    public static class Helper
+    public static class Utils
     {
         public static string GenerateId(string prefix)
         {

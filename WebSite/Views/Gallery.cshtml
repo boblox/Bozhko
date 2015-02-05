@@ -1,12 +1,9 @@
-﻿@using System.Web.Optimization;
-@using Site.Helpers;
-@using Site.Models;
-@inherits UmbracoViewPage<Gallery>
+﻿@inherits UmbracoViewPage<Gallery>
 @{
     Layout = "LayoutBase.cshtml";
 
     var dataTypeService = ApplicationContext.Current.Services.DataTypeService;
-    var imageCategories = Helper.GetDataTypePreValues(
+    var imageCategories = Utils.GetDataTypePreValues(
         dataTypeService,
         Consts.DataTypes.ImageCategory);
     var widthPerCategory = 24 / (imageCategories.Count() + 1);

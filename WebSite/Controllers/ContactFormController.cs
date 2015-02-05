@@ -1,5 +1,4 @@
-﻿using Site.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,9 +11,12 @@ using Site.Helpers;
 using Umbraco.Core.Logging;
 using System.Net.Mail;
 using System.Text;
-using Site.Resources;
 using HtmlAgilityPack;
+using Logic.Resources;
 using Logic.Helpers;
+using Logic.Models;
+
+using SiteLocalization = Site.Resources.Localization;
 
 namespace Site.Controllers
 {
@@ -34,7 +36,7 @@ namespace Site.Controllers
 
                 var body = GetMailBody(model);
 
-                Helper.SendEmail(model.EmailFrom,
+                Utils.SendEmail(model.EmailFrom,
                     model.EmailTo,
                     Localization.ContactFormEmailSubject,
                     body);
@@ -90,7 +92,7 @@ namespace Site.Controllers
 
         private string BoolToLocalizedString(bool b)
         {
-            return b ? Localization.True : Localization.False;
+            return b ? SiteLocalization.True : SiteLocalization.False;
         }
 
         private void ReplacePlaceholder(StringBuilder builder, string key, string value)

@@ -1,4 +1,4 @@
-﻿using Site.Resources;
+﻿using Logic.Resources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using Umbraco.Core.Models;
 using Umbraco.Web.Models;
 
-namespace Site.Models
+namespace Logic.Models
 {
     public class ContactForm
     {

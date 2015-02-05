@@ -1,7 +1,7 @@
 ﻿@inherits UmbracoTemplatePage
 @{
     var carouselImages = (dynamic)ViewData["carouselImages"];
-    var id = Helper.GenerateId("carouselItems");
+    var id = Utils.GenerateId("carouselItems");
 }
 
 @if (carouselImages.Count() > 0)

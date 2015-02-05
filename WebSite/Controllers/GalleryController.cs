@@ -1,5 +1,4 @@
-﻿using Site.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +8,7 @@ using Umbraco.Web.Mvc;
 using Umbraco.Web;
 using umbraco;
 using Site.Helpers;
+using Logic.Models;
 
 namespace Site.Controllers
 {

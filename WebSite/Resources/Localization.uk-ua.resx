@@ -123,9 +123,6 @@
   <data name="False" xml:space="preserve">
     <value>Ні</value>
   </data>
-  <data name="RequiredField" xml:space="preserve">
-    <value>*</value>
-  </data>
   <data name="True" xml:space="preserve">
     <value>Так</value>
   </data>

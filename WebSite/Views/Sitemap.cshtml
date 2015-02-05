@@ -4,9 +4,8 @@
     Response.ContentType = "text/xml";
 
     var parent = Model.Content.Parent;
-    var newsRoot = parent.Children().FirstOrDefault(i => i.DocumentTypeAlias == "NewsOverview");
-    var humanNodes = parent.Descendants("HumansOverview");
-    var galleryRoot = parent.Children().FirstOrDefault(i => i.DocumentTypeAlias == "Gallery");
+    var newsRoot = parent.Children().FirstOrDefault(i => i.DocumentTypeAlias == Consts.NewsOverviewDocType.Alias);
+    var galleryRoot = parent.Children().FirstOrDefault(i => i.DocumentTypeAlias == Consts.GalleryDocType.Alias);
 }
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -20,15 +19,10 @@
         DrawChildNodes(newsRoot);
     }
 
-    @foreach (var humanNode in humanNodes)
-    {
-        DrawChildNodes(humanNode);
-    }
-
-    @if (galleryRoot != null)
+    @*@if (galleryRoot != null)
     {
         DrawChildNodes(galleryRoot);
-    }
+    }*@
 </urlset>
 
 @helper DrawVisibleChildNodes(IPublishedContent startNode)

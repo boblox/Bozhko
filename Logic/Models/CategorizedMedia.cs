@@ -5,7 +5,7 @@ using System.Web;
 using Umbraco.Core.Models;
 using Umbraco.Web.Models;
 
-namespace Site.Models
+namespace Logic.Models
 {
     public class CategorizedMedia
     {

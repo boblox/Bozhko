@@ -11,7 +11,7 @@ using Logic.Resources;
 using Umbraco.Core;
 using Umbraco.Web;
 
-namespace Logic.Helpers
+namespace Site.Helpers
 {
     public static class HtmlHelperExtensions
     {

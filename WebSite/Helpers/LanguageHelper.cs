@@ -7,7 +7,7 @@ using umbraco.cms.businesslogic.web;
 using umbraco;
 using Logic.Models;
 
-namespace Logic.Helpers
+namespace Site.Helpers
 {
     public static class LanguageHelper
     {
