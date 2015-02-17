@@ -14,7 +14,7 @@
     <RootNamespace>Site</RootNamespace>
     <AssemblyName>Site</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <MvcBuildViews>false</MvcBuildViews>
+    <MvcBuildViews>true</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -319,6 +319,7 @@
     <Content Include="Css\globals.min.css">
       <DependentUpon>globals.css</DependentUpon>
     </Content>
+    <Content Include="Css\images\scroll-to-top.png" />
     <Content Include="Css\images\magnific-popup-arrow.png" />
     <Content Include="Css\images\logo.png" />
     <Content Include="Css\images\magnific-popup-close.png" />
@@ -696,7 +697,9 @@
     <Content Include="MacroScripts\MultiLanguage\LanguageSwitcher\FlagSprites.cshtml" />
     <Content Include="MacroScripts\MultiLanguage\LanguageSwitcher\List.cshtml" />
     <Content Include="MacroScripts\MultiLanguage\Metadata.cshtml" />
-    <Content Include="MacroScripts\Web.config" />
+    <Content Include="MacroScripts\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\ContentBase.cshtml" />
@@ -933,6 +936,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Partials\Comments.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\ScrollToTop.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

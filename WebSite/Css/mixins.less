@@ -4,18 +4,60 @@
 @import (reference) "variables.less";
 @import (reference) "bootstrap-n-column.less";
 
-.social-icon(@x) {
+.social-icon(@x, @is-main-menu) {
     @height: 24px;
     @width: 24px;
     display: block;
-    background: white url('images/icons-contact.png');
+    background-image: url('images/icons-contact.png');
     width: @width;
     height: @height;
     border-radius: 50%;
     background-position: @x 0;
+    opacity: 0.65;
+
+    & when (@is-main-menu = true) {
+        opacity: 1;
+    }
 
     &:hover {
-        background-position: @x @height;
+        opacity: 1;
+
+        & when (@is-main-menu = true) {
+            background-position: @x @height;
+        }
+    }
+}
+
+.social-icons(@is-main-menu) {
+    display: inline-block;
+    float: left;
+
+    a {
+        .transition(all 0.4s);
+
+        &.instagram {
+            .social-icon(0, @is-main-menu);
+        }
+
+        &.facebook {
+            .social-icon(-24px, @is-main-menu);
+        }
+
+        &.skype {
+            .social-icon(-48px, @is-main-menu);
+        }
+
+        &.vkontakte {
+            .social-icon(-72px, @is-main-menu);
+        }
+
+        &.twitter {
+            .social-icon(-96px, @is-main-menu);
+        }
+
+        &.messenger {
+            .social-icon(-120px, @is-main-menu);
+        }
     }
 }
 

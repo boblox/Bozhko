@@ -59,6 +59,47 @@ function InitGallery() {
         });
     }
 
+    function getShareButtonsContent(imgSrc) {
+        var sharers = {
+            facebook: {
+                url: "http://www.facebook.com/sharer/sharer.php?u="
+            },
+            instagram: {
+                url: "http://www.instagram.com/sharer/sharer.php?u="
+            },
+            vkontakte: {
+                url: "https://vk.com/share.php?url="
+            },
+            twitter: {
+                url: "http://twitter.com/share?url="
+            },
+            messenger: {
+                url: "http://www.instagram.com/sharer/sharer.php?u="
+            }
+        }
+
+        function getShareButton(type) {
+            var url = sharers[type].url + encodeURIComponent(imgSrc);
+            var link = $("<a>")
+                .addClass(type)
+                .attr('title', "share on " + type)
+                //.attr('href', url)
+                //.attr('target', '_blank')
+                .on('click', function () {
+                    window.open(url, '_blank', "width=600,height=400");
+                });
+            return $("<li>").append(link);
+        }
+
+        var container = $("<ul>").addClass("mfp-share-buttons");
+        container.append(getShareButton("facebook"));
+        container.append(getShareButton("vkontakte"));
+        //container.append(getShareButton("messenger"));
+        //container.append(getShareButton("instagram"));
+        container.append(getShareButton("twitter"));
+        return container;
+    }
+
     function loadMagnificPopUp() {
         imagesContainer.find('.masonry-item').magnificPopup({
             type: 'image',
@@ -70,12 +111,12 @@ function InitGallery() {
             gallery: {
                 enabled: true,
                 preload: [0, 1],
-                arrowMarkup: '<button title="%title%" type="button" class="custom-arrow arrow-%dir%">' +
+                arrowMarkup: '<button title="%title%" type="button" class="mfp-custom-arrow arrow-%dir%">' +
                                 '<div class="mfp-prevent-close"></div>' +
                              '</button>'
             },
+            tLoading: '',
             closeMarkup: '<button title="%title%" class="mfp-close">' +
-                            //'<span class="glyphicon glyphicon-remove-circle"></span>' +
                         '</button>',
             mainClass: 'mfp-fade',
             removalDelay: 300,
@@ -83,6 +124,8 @@ function InitGallery() {
                 buildControls: function () {
                     // re-appends controls inside the main container
                     this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+                    var img = this.content.find("img");
+                    this.content.find("figure").before(getShareButtonsContent(img.prop('src')));
                 }
             }
         });
@@ -151,7 +194,7 @@ function InitImagesCarousel(carouselWrapperId) {
     //});
 }
 
-/*********************************************=ImagesCarousel=****************************************************************/
+/***************************************************=Disqus=******************************************************************/
 
 function InitDisqus(identifier) {
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -163,6 +206,26 @@ function InitDisqus(identifier) {
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
+}
+
+/**********************************************=Scroll to top=***************************************************************/
+
+function InitScrollToTop() {
+    var identifier = ".scroll-to-top";
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 150) {
+            $(identifier).fadeIn("slow");
+        } else {
+            $(identifier).fadeOut("slow");
+        }
+    });
+
+    //Click event to scroll to top
+    $(identifier).click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 800);
+        return false;
+    });
 }
 
 /*****************************************Google analytics******************************************************************/

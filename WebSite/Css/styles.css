@@ -7028,8 +7028,8 @@ ul.contact {
 }
 ul.contact li {
   display: inline-block;
-  margin: 13px;
   float: left;
+  margin: 13px;
 }
 ul.contact li a {
   -webkit-transition: all 0.4s;
@@ -7038,36 +7038,87 @@ ul.contact li a {
 }
 ul.contact li a.instagram {
   display: block;
-  background: white url('images/icons-contact.png');
+  background-image: url('images/icons-contact.png');
   width: 24px;
   height: 24px;
   border-radius: 50%;
   background-position: 0 0;
+  opacity: 0.65;
+  opacity: 1;
 }
 ul.contact li a.instagram:hover {
+  opacity: 1;
   background-position: 0 24px;
 }
 ul.contact li a.facebook {
   display: block;
-  background: white url('images/icons-contact.png');
+  background-image: url('images/icons-contact.png');
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-position: -50px 0;
+  background-position: -24px 0;
+  opacity: 0.65;
+  opacity: 1;
 }
 ul.contact li a.facebook:hover {
-  background-position: -50px 24px;
+  opacity: 1;
+  background-position: -24px 24px;
 }
 ul.contact li a.skype {
   display: block;
-  background: white url('images/icons-contact.png');
+  background-image: url('images/icons-contact.png');
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-position: -100px 0;
+  background-position: -48px 0;
+  opacity: 0.65;
+  opacity: 1;
 }
 ul.contact li a.skype:hover {
-  background-position: -100px 24px;
+  opacity: 1;
+  background-position: -48px 24px;
+}
+ul.contact li a.vkontakte {
+  display: block;
+  background-image: url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: -72px 0;
+  opacity: 0.65;
+  opacity: 1;
+}
+ul.contact li a.vkontakte:hover {
+  opacity: 1;
+  background-position: -72px 24px;
+}
+ul.contact li a.twitter {
+  display: block;
+  background-image: url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: -96px 0;
+  opacity: 0.65;
+  opacity: 1;
+}
+ul.contact li a.twitter:hover {
+  opacity: 1;
+  background-position: -96px 24px;
+}
+ul.contact li a.messenger {
+  display: block;
+  background-image: url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: -120px 0;
+  opacity: 0.65;
+  opacity: 1;
+}
+ul.contact li a.messenger:hover {
+  opacity: 1;
+  background-position: -120px 24px;
 }
 /*Portfolio*********************************************************/
 .gallery-categories {
@@ -7164,6 +7215,9 @@ ul.contact li a.skype:hover {
   max-width: 100%;
   height: auto;
 }
+.content-wrapper .text-content iframe {
+  max-width: 100%;
+}
 /*Contact Form********************************************************/
 .contact-form {
   font-size: 0.77em;
@@ -7177,6 +7231,25 @@ ul.contact li a.skype:hover {
 /*Disqus***************************************************************/
 .disqus-wrapper {
   margin-top: 50px;
+}
+/*Scroll to top********************************************************/
+.scroll-to-top {
+  width: 57px;
+  height: 57px;
+  z-index: 10;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display: none;
+  background: url('images/scroll-to-top.png') no-repeat;
+  background-color: rgba(255, 255, 255, 0.65);
+  -webkit-transition: background-color 0.4s;
+  -o-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+  border-radius: 50%;
+}
+.scroll-to-top:hover {
+  background-color: #ffffff;
 }
 /*!Mixins.css*/
 .vertical-align-middle {
@@ -8234,16 +8307,114 @@ ul.contact li a.skype:hover {
 /*Magnific PopUp******************************************************/
 .mfp-container .mfp-close {
   right: 0;
-  background: transparent url('images/magnific-popup-close.png') no-repeat right 8px;
+  background: transparent url('images/magnific-popup-close.png') no-repeat right center;
 }
 .mfp-container .mfp-figure:after {
-  top: 50px;
-  bottom: 50px;
+  top: 44px;
+  right: 30px;
 }
-.mfp-container img.mfp-img {
-  padding: 50px 0;
+.mfp-container .mfp-figure ul.mfp-share-buttons {
+  width: 30px;
+  padding: 0;
+  padding-top: 54px;
+  margin: 0;
+  float: right;
 }
-.mfp-container .custom-arrow {
+.mfp-container .mfp-figure ul.mfp-share-buttons li {
+  display: inline-block;
+  float: left;
+  margin: 0 0 10px 6px;
+}
+.mfp-container .mfp-figure ul.mfp-share-buttons li a {
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.mfp-container .mfp-figure ul.mfp-share-buttons li a.instagram {
+  display: block;
+  background-image: url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: 0 0;
+  opacity: 0.65;
+}
+.mfp-container .mfp-figure ul.mfp-share-buttons li a.instagram:hover {
+  opacity: 1;
+}
+.mfp-container .mfp-figure ul.mfp-share-buttons li a.facebook {
+  display: block;
+  background-image: url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: -24px 0;
+  opacity: 0.65;
+}
+.mfp-container .mfp-figure ul.mfp-share-buttons li a.facebook:hover {
+  opacity: 1;
+}
+.mfp-container .mfp-figure ul.mfp-share-buttons li a.skype {
+  display: block;
+  background-image: url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: -48px 0;
+  opacity: 0.65;
+}
+.mfp-container .mfp-figure ul.mfp-share-buttons li a.skype:hover {
+  opacity: 1;
+}
+.mfp-container .mfp-figure ul.mfp-share-buttons li a.vkontakte {
+  display: block;
+  background-image: url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: -72px 0;
+  opacity: 0.65;
+}
+.mfp-container .mfp-figure ul.mfp-share-buttons li a.vkontakte:hover {
+  opacity: 1;
+}
+.mfp-container .mfp-figure ul.mfp-share-buttons li a.twitter {
+  display: block;
+  background-image: url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: -96px 0;
+  opacity: 0.65;
+}
+.mfp-container .mfp-figure ul.mfp-share-buttons li a.twitter:hover {
+  opacity: 1;
+}
+.mfp-container .mfp-figure ul.mfp-share-buttons li a.messenger {
+  display: block;
+  background-image: url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: -120px 0;
+  opacity: 0.65;
+}
+.mfp-container .mfp-figure ul.mfp-share-buttons li a.messenger:hover {
+  opacity: 1;
+}
+.mfp-container .mfp-figure figure {
+  overflow: hidden;
+}
+.mfp-container .mfp-figure figure img.mfp-img {
+  padding-top: 44px;
+}
+.mfp-container .mfp-figure .mfp-counter {
+  right: 30px;
+}
+.mfp-container.mfp-s-loading .mfp-custom-arrow {
+  display: none;
+}
+.mfp-container .mfp-custom-arrow {
   position: absolute;
   z-index: 1000;
   top: 10%;
@@ -8257,18 +8428,18 @@ ul.contact li a.skype:hover {
   -o-transition: opacity 0.2s;
   transition: opacity 0.2s;
 }
-.mfp-container .custom-arrow:hover {
+.mfp-container .mfp-custom-arrow:hover {
   opacity: 1;
 }
-.mfp-container .custom-arrow div {
+.mfp-container .mfp-custom-arrow div {
   background: url('images/magnific-popup-arrow.png') transparent no-repeat;
   height: 103px;
 }
-.mfp-container .custom-arrow.arrow-left {
+.mfp-container .mfp-custom-arrow.arrow-left {
   left: 0;
   padding-left: 35px;
 }
-.mfp-container .custom-arrow.arrow-left div {
+.mfp-container .mfp-custom-arrow.arrow-left div {
   background-position: right center;
   /*right because of scaleX*/
   -webkit-transform: scaleX(-1);
@@ -8276,12 +8447,54 @@ ul.contact li a.skype:hover {
   -o-transform: scaleX(-1);
   transform: scaleX(-1);
 }
-.mfp-container .custom-arrow.arrow-right {
+.mfp-container .mfp-custom-arrow.arrow-right {
   right: 0;
   padding-right: 35px;
+  margin-right: 30px;
 }
-.mfp-container .custom-arrow.arrow-right div {
+.mfp-container .mfp-custom-arrow.arrow-right div {
   background-position: right center;
+}
+/*Loading spinner for images*********************/
+.mfp-preloader {
+  width: 40px;
+  height: 40px;
+  margin: 100px auto;
+  background-color: #fff;
+  border-radius: 100%;
+  -webkit-animation: scaleout 1s infinite ease-in-out;
+  -o-animation: scaleout 1s infinite ease-in-out;
+  animation: scaleout 1s infinite ease-in-out;
+}
+@-webkit-keyframes scaleout {
+  0% {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+@keyframes scaleout {
+  0% {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
 }
 /*Animation at open*************************/
 /* overlay at start */

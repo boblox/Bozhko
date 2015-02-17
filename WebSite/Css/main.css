@@ -224,8 +224,8 @@ ul.contact {
 }
 ul.contact li {
   display: inline-block;
-  margin: 13px;
   float: left;
+  margin: 13px;
 }
 ul.contact li a {
   -webkit-transition: all 0.4s;
@@ -234,36 +234,87 @@ ul.contact li a {
 }
 ul.contact li a.instagram {
   display: block;
-  background: white url('images/icons-contact.png');
+  background-image: url('images/icons-contact.png');
   width: 24px;
   height: 24px;
   border-radius: 50%;
   background-position: 0 0;
+  opacity: 0.65;
+  opacity: 1;
 }
 ul.contact li a.instagram:hover {
+  opacity: 1;
   background-position: 0 24px;
 }
 ul.contact li a.facebook {
   display: block;
-  background: white url('images/icons-contact.png');
+  background-image: url('images/icons-contact.png');
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-position: -50px 0;
+  background-position: -24px 0;
+  opacity: 0.65;
+  opacity: 1;
 }
 ul.contact li a.facebook:hover {
-  background-position: -50px 24px;
+  opacity: 1;
+  background-position: -24px 24px;
 }
 ul.contact li a.skype {
   display: block;
-  background: white url('images/icons-contact.png');
+  background-image: url('images/icons-contact.png');
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-position: -100px 0;
+  background-position: -48px 0;
+  opacity: 0.65;
+  opacity: 1;
 }
 ul.contact li a.skype:hover {
-  background-position: -100px 24px;
+  opacity: 1;
+  background-position: -48px 24px;
+}
+ul.contact li a.vkontakte {
+  display: block;
+  background-image: url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: -72px 0;
+  opacity: 0.65;
+  opacity: 1;
+}
+ul.contact li a.vkontakte:hover {
+  opacity: 1;
+  background-position: -72px 24px;
+}
+ul.contact li a.twitter {
+  display: block;
+  background-image: url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: -96px 0;
+  opacity: 0.65;
+  opacity: 1;
+}
+ul.contact li a.twitter:hover {
+  opacity: 1;
+  background-position: -96px 24px;
+}
+ul.contact li a.messenger {
+  display: block;
+  background-image: url('images/icons-contact.png');
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-position: -120px 0;
+  opacity: 0.65;
+  opacity: 1;
+}
+ul.contact li a.messenger:hover {
+  opacity: 1;
+  background-position: -120px 24px;
 }
 /*Portfolio*********************************************************/
 .gallery-categories {
@@ -360,6 +411,9 @@ ul.contact li a.skype:hover {
   max-width: 100%;
   height: auto;
 }
+.content-wrapper .text-content iframe {
+  max-width: 100%;
+}
 /*Contact Form********************************************************/
 .contact-form {
   font-size: 0.77em;
@@ -373,5 +427,24 @@ ul.contact li a.skype:hover {
 /*Disqus***************************************************************/
 .disqus-wrapper {
   margin-top: 50px;
+}
+/*Scroll to top********************************************************/
+.scroll-to-top {
+  width: 57px;
+  height: 57px;
+  z-index: 10;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display: none;
+  background: url('images/scroll-to-top.png') no-repeat;
+  background-color: rgba(255, 255, 255, 0.65);
+  -webkit-transition: background-color 0.4s;
+  -o-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+  border-radius: 50%;
+}
+.scroll-to-top:hover {
+  background-color: #ffffff;
 }
 /*# sourceMappingURL=main.css.map */

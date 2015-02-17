@@ -145,25 +145,8 @@ ul.contact {
     }
 
     li {
-        display: inline-block;
+        .social-icons(true);
         margin: 13px;
-        float: left;
-
-        a {
-            .transition(all 0.4s);
-
-            &.instagram {
-                .social-icon(0);
-            }
-
-            &.facebook {
-                .social-icon(-50px);
-            }
-
-            &.skype {
-                .social-icon(-100px);
-            }
-        }
     }
 }
 
@@ -262,6 +245,10 @@ ul.contact {
         img {
             .img-responsive();
         }
+
+        iframe {
+            max-width: 100%;
+        }
     }
 }
 
@@ -281,4 +268,23 @@ ul.contact {
 /*Disqus***************************************************************/
 .disqus-wrapper {
     margin-top: 50px;
+}
+
+/*Scroll to top********************************************************/
+.scroll-to-top {
+    width: 57px;
+    height: 57px;
+    z-index: 10;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: none;
+    background: url('images/scroll-to-top.png') no-repeat;
+    background-color: rgba(255, 255, 255, 0.65);
+    .transition(background-color 0.4s);
+    border-radius: 50%;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 1);
+    }
 }
