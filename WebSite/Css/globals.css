@@ -1,4 +1,5 @@
-﻿/*!Globals*/
+﻿/*!Globals - styling for JS plugins and global things which don't directly
+   belong to site design*/
 /*@import (reference) "Bootstrap/labels.less";*/
 .thumbnail > img,
 .thumbnail a > img,
@@ -206,6 +207,7 @@
   height: 80%;
   opacity: 0;
   cursor: pointer;
+  outline: none;
   border: none;
   background: transparent;
   -webkit-transition: opacity 0.2s;

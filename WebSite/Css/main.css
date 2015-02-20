@@ -444,6 +444,9 @@ ul.contact li a.messenger:hover {
   transition: background-color 0.4s;
   border-radius: 50%;
 }
+.scroll-to-top:focus {
+  outline: none;
+}
 .scroll-to-top:hover {
   background-color: #ffffff;
 }
