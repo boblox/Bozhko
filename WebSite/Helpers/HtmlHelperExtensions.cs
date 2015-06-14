@@ -66,7 +66,7 @@ namespace Site.Helpers
         public static MvcHtmlString GetThumbnailUrl(this HtmlHelper html, string url)
         {
             return new MvcHtmlString(string.Format("/ImageGen.ashx?image={0}&Width={1}",
-                HttpUtility.UrlEncode(url), 400));
+                HttpUtility.UrlEncode(url), 250));
         }
     }
 }

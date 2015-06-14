@@ -31,4 +31,12 @@
         </div>
         @{Html.RenderPartial("Comments");}
     </div>
+    <script type="text/javascript">
+        $(function () {
+            $(".text-content").find("img").on("contextmenu",
+                function (e) {
+                    e.preventDefault();
+                });
+        });
+    </script>
 }

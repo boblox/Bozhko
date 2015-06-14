@@ -126,6 +126,11 @@ function InitGallery() {
                     this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
                     var img = this.content.find("img");
                     this.content.find("figure").before(getShareButtonsContent(img.prop('src')));
+
+                    img.on("contextmenu",
+                        function (e) {
+                            e.preventDefault();
+                        });
                 }
             }
         });
